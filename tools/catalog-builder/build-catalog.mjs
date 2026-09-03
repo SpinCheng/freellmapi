@@ -52,8 +52,11 @@ function isChatModel(id) {
 }
 
 // ── 3. 移除：某平台拉取成功、但目录行不在其 /models 里（含宽松短名匹配）──
+// trustListing:false 的平台（如智谱）列表不完整——免费模型可能仍可调但不在列表，
+// 据此删行会误杀，跳过
 for (const [platform, res] of Object.entries(fetched)) {
   if (!res.ok || !res.models?.length) continue;
+  if (PROVIDERS[platform]?.trustListing === false) continue;
   const liveShort = new Set(res.models.map((m) => shortName(m.id)));
   const before = base.models.length;
   base.models = base.models.filter((m) => {
@@ -139,7 +142,8 @@ for (const m of base.models) {
 }
 
 const today = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
-// 版本必须严格大于"数据库已应用版本"（否则 sync 判 304 不拉取），也要大于基准版本
+// 版本必须严格大于"数据库已应用版本"（否则 sync 判 304 不拉取），也要大于基准版本。
+// 同日多次构建时用确定性后缀递增，避免随机数回退。
 let appliedVersion = '';
 try {
   const Database = require('better-sqlite3');
@@ -148,8 +152,16 @@ try {
   db.close();
 } catch { /* 数据库不可用时退化为只对比基准 */ }
 let version = today;
+for (const ceiling of [String(base.version), appliedVersion]) {
+  if (ceiling.startsWith(today) && ceiling.length > today.length) {
+    const prevSuffix = Number(ceiling.slice(today.length + 1));
+    if (Number.isFinite(prevSuffix)) version = `${today}.${Math.max(Number(version.slice(today.length + 1) || 0), prevSuffix) + 1}`;
+  } else if (!(version > ceiling)) {
+    version = `${today}.1`;
+  }
+}
 if (!(version > String(base.version)) || !(version > String(appliedVersion))) {
-  version = `${today}.${Date.now() % 100000}`;
+  version = `${today}.${Date.now() % 1000000}`;
 }
 base.version = version;
 base.tier = 'monthly'; // 自维护源沿用 monthly 语义（live 需要 fla_ 许可）

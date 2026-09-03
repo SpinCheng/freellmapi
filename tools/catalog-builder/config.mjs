@@ -44,7 +44,9 @@ export const PROVIDERS = {
   orcarouter:  { base: 'https://api.orcarouter.ai/v1', style: 'openai', autoAdd: false },
   unorouter:   { base: 'https://api.unorouter.com/v1', style: 'openai', autoAdd: false },
   xkiro:       { base: 'https://api.xkiro.com/v1', style: 'openai', autoAdd: false },
-  zhipu:       { base: 'https://open.bigmodel.cn/api/paas/v4', style: 'openai', autoAdd: true, filter: (id) => /flash|free/i.test(id) },
+  // 智谱 2026-09-03 实测（零余额试金石）：glm-4.5-flash 仍免费但已从 /models 消失，
+  // glm-5.3-flash 是付费——/models 列表既不标价也不全，禁止自动收录、禁止据其删行
+  zhipu:       { base: 'https://open.bigmodel.cn/api/paas/v4', style: 'openai', autoAdd: false, trustListing: false },
   cohere:      { base: 'https://api.cohere.ai/compatibility/v1', style: 'openai', autoAdd: true },
   cloudflare:  { style: 'cloudflare', autoAdd: true },
 };

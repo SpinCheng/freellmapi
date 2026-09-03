@@ -1,9 +1,9 @@
 {
-  "version": "2026.09.03.52761",
-  "generatedAt": "2026-09-03T01:34:12.761Z",
+  "version": "2026.09.03.52762",
+  "generatedAt": "2026-09-03T01:47:40.057Z",
   "tier": "monthly",
   "counts": {
-    "models": 383,
+    "models": 386,
     "quirks": 30
   },
   "platforms": [
@@ -1038,6 +1038,26 @@
       ]
     },
     {
+      "platform": "zhipu",
+      "modelId": "glm-4.7-flash",
+      "displayName": "GLM-4.7 Flash",
+      "intelligenceRank": 18,
+      "speedRank": 4,
+      "sizeLabel": "Large",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": 1000000
+      },
+      "monthlyTokenBudget": "~30M",
+      "contextWindow": 131072,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true,
+      "quirks": []
+    },
+    {
       "platform": "google",
       "modelId": "gemma-4-31b-it",
       "displayName": "Gemma 4 31B IT",
@@ -1203,6 +1223,33 @@
       "supportsVision": false,
       "supportsTools": true,
       "quirks": []
+    },
+    {
+      "platform": "zhipu",
+      "modelId": "glm-4.6v-flash",
+      "displayName": "GLM-4.6V Flash",
+      "intelligenceRank": 21,
+      "speedRank": 4,
+      "sizeLabel": "Large",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~30M",
+      "contextWindow": 131072,
+      "enabled": true,
+      "supportsVision": true,
+      "supportsTools": true,
+      "quirks": [
+        {
+          "slug": "zhipu-shared-key",
+          "title": "Works with existing Zhipu key",
+          "body": "glm-4.6v-flash is listed Free on Z.AI and answers 200 with the existing bigmodel.cn key; vision and structured tool calls both live-verified.",
+          "severity": "info"
+        }
+      ]
     },
     {
       "platform": "cloudflare",
@@ -1739,6 +1786,26 @@
       "supportsVision": false,
       "supportsTools": false,
       "mediaNote": "WAV/PCM - 30+ voices",
+      "quirks": []
+    },
+    {
+      "platform": "zhipu",
+      "modelId": "glm-4.5-flash",
+      "displayName": "GLM-4.5 Flash",
+      "intelligenceRank": 22,
+      "speedRank": 4,
+      "sizeLabel": "Medium",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": 1000000
+      },
+      "monthlyTokenBudget": "~30M",
+      "contextWindow": 131072,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true,
       "quirks": []
     },
     {
@@ -8915,25 +8982,6 @@
       "supportsTools": true
     },
     {
-      "platform": "zhipu",
-      "modelId": "glm-5.3-flash",
-      "displayName": "GLM 5 3 Flash",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
       "platform": "cloudflare",
       "modelId": "@cf/pipecat-ai/smart-turn-v2",
       "displayName": "Smart Turn V2",
@@ -9070,6 +9118,25 @@
       "platform": "cloudflare",
       "modelId": "@cf/deepgram/nova-3",
       "displayName": "Nova 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/zai-org/glm-5.3-flash",
+      "displayName": "GLM 5 3 Flash",
       "intelligenceRank": 5,
       "speedRank": 5,
       "sizeLabel": "Free",
