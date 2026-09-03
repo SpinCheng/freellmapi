@@ -44,6 +44,13 @@ const baseShortNames = new Set(base.models.map((m) => shortName(m.modelId)));
 
 const report = { added: [], removed: [], skipped: [] };
 
+// ── 非对话模型过滤：/models 常混入 embedding/语音/图像/安全类，
+//    它们不在 chat/completions 上服务，自动新增时一律拒收
+const NON_CHAT = /embed|bge[-/]|m3e|gte[-/]|rerank|whisper|tts|text-to-speech|voice|speech|moderation|guard|diffusion|lyria|veo|imagen|flux|sdxl/i;
+function isChatModel(id) {
+  return !NON_CHAT.test(id);
+}
+
 // ── 3. 移除：某平台拉取成功、但目录行不在其 /models 里（含宽松短名匹配）──
 for (const [platform, res] of Object.entries(fetched)) {
   if (!res.ok || !res.models?.length) continue;
@@ -61,6 +68,7 @@ for (const [platform, res] of Object.entries(fetched)) {
 // ── 4. 新增 A：OpenRouter 公开免费列表（跨厂商情报，落到 openrouter 平台）──
 const orLive = fetched.openrouter?.ok ? new Set(fetched.openrouter.models.map((m) => m.id)) : null;
 for (const m of openrouterPublic) {
+  if (!isChatModel(m.id)) continue;
   if (baseIds.has(`openrouter|${m.id}`) || baseShortNames.has(shortName(m.id))) continue;
   if (orLive && !orLive.has(m.id)) continue; // 自己的 openrouter key 拉不到的不加
   base.models.push({
@@ -89,6 +97,7 @@ for (const [platform, res] of Object.entries(fetched)) {
   if (!res.ok || !cfg?.autoAdd || !res.models?.length) continue;
   let n = 0;
   for (const m of res.models) {
+    if (!isChatModel(m.id)) continue;
     if (cfg.filter && !cfg.filter(m.id)) continue;
     if (baseIds.has(`${platform}|${m.id}`) || baseShortNames.has(shortName(m.id))) continue;
     const orMeta = orPublicByShort.get(shortName(m.id)); // 用 OpenRouter 元数据补上下文/视觉
@@ -130,8 +139,18 @@ for (const m of base.models) {
 }
 
 const today = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
+// 版本必须严格大于"数据库已应用版本"（否则 sync 判 304 不拉取），也要大于基准版本
+let appliedVersion = '';
+try {
+  const Database = require('better-sqlite3');
+  const db = new Database(DB_PATH, { readonly: true });
+  appliedVersion = db.prepare("SELECT value FROM settings WHERE key='catalog_applied_version'").get()?.value ?? '';
+  db.close();
+} catch { /* 数据库不可用时退化为只对比基准 */ }
 let version = today;
-if (!(version > String(base.version))) version = `${today}.${Date.now() % 100000}`;
+if (!(version > String(base.version)) || !(version > String(appliedVersion))) {
+  version = `${today}.${Date.now() % 100000}`;
+}
 base.version = version;
 base.tier = 'monthly'; // 自维护源沿用 monthly 语义（live 需要 fla_ 许可）
 base.generatedAt = new Date().toISOString();
