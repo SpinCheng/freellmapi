@@ -1,9 +1,9 @@
 {
-  "version": "2026.09.03.52762",
-  "generatedAt": "2026-09-03T01:47:40.057Z",
+  "version": "2026.09.04",
+  "generatedAt": "2026-09-04T02:58:45.685Z",
   "tier": "monthly",
   "counts": {
-    "models": 386,
+    "models": 385,
     "quirks": 30
   },
   "platforms": [
@@ -8466,25 +8466,6 @@
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
-      "supportsTools": true
-    },
-    {
-      "platform": "google",
-      "modelId": "gemini-flash-latest-high-res-exp",
-      "displayName": "Gemini Flash Latest High RES EXP",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "",
-      "contextWindow": 1048576,
-      "enabled": true,
-      "supportsVision": false,
       "supportsTools": true
     },
     {
