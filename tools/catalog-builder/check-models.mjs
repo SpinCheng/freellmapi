@@ -88,6 +88,31 @@ const workers = Array.from({ length: CONCURRENCY }, async () => {
 });
 await Promise.all(workers);
 
+// ── 状态翻转检测：对比上一次报告，逮住"免费额度耗尽"的 freemium 模型 ──
+const PREV = path.join(WORK, 'smoke-report.prev.json');
+let transitions = null;
+try {
+  const prev = JSON.parse(fs.readFileSync(PREV, 'utf8'));
+  const prevBy = new Map(prev.results.map((r) => [r.model, r.status]));
+  const flips = results
+    .map((r) => ({ model: r.model, from: prevBy.get(r.model), to: r.status }))
+    .filter((t) => t.from !== undefined && t.from !== t.to);
+  const exhausted = flips.filter((t) => /ok/.test(t.from) && /paid/.test(t.to));
+  const recovered = flips.filter((t) => /paid/.test(t.from) && /ok/.test(t.to));
+  transitions = {
+    comparedWith: prev.testedAt,
+    exhausted,   // ok → paid：免费额度用完（freemium 实锤）或额度类 credit 耗尽
+    recovered,   // paid → ok：额度重置（如月度 credit 刷新）
+    other: flips.filter((t) => !exhausted.includes(t) && !recovered.includes(t)),
+  };
+  console.log(`\n===== 状态翻转（对比 ${prev.testedAt}）=====`);
+  console.log(`额度耗尽 ok→paid: ${exhausted.length} 个${exhausted.length ? ' ← ' + exhausted.map((t) => t.model).join(', ') : ''}`);
+  console.log(`额度恢复 paid→ok: ${recovered.length} 个${recovered.length ? ' ← ' + recovered.map((t) => t.model).join(', ') : ''}`);
+  console.log(`其他翻转: ${transitions.other.length} 个`);
+} catch {
+  console.log('\n（无历史报告，跳过翻转检测；下次运行起生效）');
+}
+
 // 汇总
 const by = {};
 for (const r of results) by[r.status] = (by[r.status] ?? 0) + 1;
@@ -95,7 +120,8 @@ console.log('\n===== 冒烟结果汇总 =====');
 for (const [k, v] of Object.entries(by).sort((a, b) => b[1] - a[1])) console.log(`${k}: ${v}`);
 const okLat = results.filter((r) => r.status === 'ok').map((r) => r.latencyMs).sort((a, b) => a - b);
 if (okLat.length) console.log(`成功延迟: p50=${okLat[Math.floor(okLat.length / 2)]}ms p95=${okLat[Math.floor(okLat.length * 0.95)]}ms`);
-fs.writeFileSync(path.join(WORK, 'smoke-report.json'), JSON.stringify({ testedAt: new Date().toISOString(), summary: by, results }, null, 2));
+fs.writeFileSync(path.join(WORK, 'smoke-report.json'), JSON.stringify({ testedAt: new Date().toISOString(), summary: by, transitions, results }, null, 2));
+fs.copyFileSync(path.join(WORK, 'smoke-report.json'), PREV);
 console.log('\n明细已写入 work/smoke-report.json');
 
 // 失败清单（速览）

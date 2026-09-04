@@ -163,6 +163,28 @@ try {
   console.warn(`[fetch] openrouter 公开列表失败: ${e.message}`);
 }
 
-const out = { fetchedAt: new Date().toISOString(), providers, openrouterPublic };
+// ── 账户额度/免费层状态（能查的平台）─────────────────────────────────
+// OpenRouter /auth/key：is_free_tier 是权威免费层判定，usage 为累计消费（美元）
+const usageInfo = {};
+if (keys.openrouter) {
+  try {
+    const j = await fetchJson('https://openrouter.ai/api/v1/auth/key', { Authorization: `Bearer ${keys.openrouter.key}` });
+    const d = j.data ?? {};
+    usageInfo.openrouter = {
+      isFreeTier: d.is_free_tier === true,
+      usage: d.usage ?? null,
+      usageDaily: d.usage_daily ?? null,
+      usageWeekly: d.usage_weekly ?? null,
+      usageMonthly: d.usage_monthly ?? null,
+      limit: d.limit ?? null,
+      limitRemaining: d.limit_remaining ?? null,
+    };
+    console.log(`[fetch] openrouter 账户: 免费层=${usageInfo.openrouter.isFreeTier}, 累计消费=$${usageInfo.openrouter.usage}, 今日=$${usageInfo.openrouter.usageDaily}`);
+  } catch (e) {
+    console.warn(`[fetch] openrouter 用量查询失败: ${e.message}`);
+  }
+}
+
+const out = { fetchedAt: new Date().toISOString(), providers, openrouterPublic, usageInfo };
 fs.writeFileSync(path.join(WORK, 'fetched.json'), JSON.stringify(out, null, 2));
 console.log(`\n已写入 work/fetched.json（${Object.values(providers).filter(p => p.ok).length} 个平台成功）`);
