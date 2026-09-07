@@ -126,6 +126,15 @@ async function fetchCloudflare(key) {
   }
 }
 
+async function fetchAIHorde() {
+  // AI Horde 自有 API：GET /api/v2/status/models?type=text，匿名 key 即可
+  // 响应为数组：[{performance, queued, jobs, eta, type, name, count}]
+  const j = await fetchJson('https://aihorde.net/api/v2/status/models?type=text');
+  return (Array.isArray(j) ? j : [])
+    .filter((m) => !m.type || String(m.type) === 'text')
+    .map((m) => ({ id: m.name, contextLength: null }));
+}
+
 // ── 主流程 ─────────────────────────────────────────────────────────────
 const keys = loadProviderKeys();
 const providers = {};
@@ -137,6 +146,7 @@ for (const [platform, cfg] of Object.entries(PROVIDERS)) {
     let models;
     if (cfg.style === 'google') models = await fetchGoogle(base, cred.key);
     else if (cfg.style === 'cloudflare') models = await fetchCloudflare(cred.key);
+    else if (cfg.style === 'aihorde') models = await fetchAIHorde();
     else models = await fetchOpenAIStyle(base, cred.key);
     providers[platform] = { ok: true, baseUrl: base, models };
     console.log(`[fetch] ${platform}: ${models.length} 个模型`);

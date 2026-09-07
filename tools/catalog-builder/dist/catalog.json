@@ -1,9 +1,9 @@
 {
-  "version": "2026.09.07.2",
-  "generatedAt": "2026-09-07T08:40:05.305Z",
+  "version": "2026.09.07.6",
+  "generatedAt": "2026-09-07T09:49:38.201Z",
   "tier": "monthly",
   "counts": {
-    "models": 385,
+    "models": 411,
     "quirks": 30
   },
   "platforms": [
@@ -712,26 +712,6 @@
     },
     {
       "platform": "mistral",
-      "modelId": "mistral-large-latest",
-      "displayName": "Mistral Large 3",
-      "intelligenceRank": 14,
-      "speedRank": 8,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": 500000,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~50-100M",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": []
-    },
-    {
-      "platform": "mistral",
       "modelId": "mistral-medium-latest",
       "displayName": "Mistral Medium 3.5",
       "intelligenceRank": 14,
@@ -839,26 +819,6 @@
       },
       "monthlyTokenBudget": "~50-100M",
       "contextWindow": 256000,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": []
-    },
-    {
-      "platform": "mistral",
-      "modelId": "devstral-latest",
-      "displayName": "Devstral",
-      "intelligenceRank": 16,
-      "speedRank": 8,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": 500000,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~50-100M",
-      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true,
@@ -2536,46 +2496,6 @@
       },
       "monthlyTokenBudget": "~50-100M",
       "contextWindow": 256000,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": []
-    },
-    {
-      "platform": "mistral",
-      "modelId": "mistral-code-agent-latest",
-      "displayName": "Mistral Code Agent",
-      "intelligenceRank": 13,
-      "speedRank": 8,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": 500000,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~50-100M",
-      "contextWindow": 256000,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": []
-    },
-    {
-      "platform": "mistral",
-      "modelId": "devstral-medium-latest",
-      "displayName": "Devstral Medium",
-      "intelligenceRank": 14,
-      "speedRank": 8,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": 500000,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~50-100M",
-      "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true,
@@ -5911,34 +5831,6 @@
           "slug": "hf-tiny-credit",
           "title": "Small $0.10/month routed credit",
           "body": "HuggingFace Inference Providers grants only ~$0.10/month of routed credit on the free tier (PRO is $2/month). Enough for light experimentation; exhausts quickly. Credits apply only to HF-routed requests.",
-          "severity": "warning"
-        }
-      ],
-      "premiumSince": "2026-07-22T09:39:29.000Z"
-    },
-    {
-      "platform": "opencode",
-      "modelId": "laguna-s-2.1-free",
-      "displayName": "Laguna S 2.1 Free (OpenCode Zen)",
-      "intelligenceRank": 12,
-      "speedRank": 4,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "promo (trial)",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "zen-promo-roster",
-          "title": "Limited-time promo, roster rotates",
-          "body": "OpenCode Zen free models are explicitly limited-time promotional access (\"available for a limited time\" per the docs), not a recurring quota. The roster rotates: qwen3.6-plus and minimax-m3 promos already ended. Expect any row here to die without notice; prompts/outputs may be used for model improvement.",
           "severity": "warning"
         }
       ],
@@ -9358,6 +9250,595 @@
       "monthlyTokenBudget": "",
       "contextWindow": null,
       "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "inclusionai/ling-3.0-flash-sante:free",
+      "displayName": "Ling 3 0 Flash Sante",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "groq",
+      "modelId": "canopylabs/orpheus-arabic-saudi",
+      "displayName": "Orpheus Arabic Saudi",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 4000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "groq",
+      "modelId": "canopylabs/orpheus-v1-english",
+      "displayName": "Orpheus V1 English",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 4000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cerebras",
+      "modelId": "qwen-3.8-27b",
+      "displayName": "Qwen 3 8 27B",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-code-fim-latest",
+      "displayName": "Mistral Code FIM Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-small-2507",
+      "displayName": "Voxtral Small 2507",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-small-latest",
+      "displayName": "Voxtral Small Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "labs-leanstral-1-5-1",
+      "displayName": "Labs Leanstral 1 5 1",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "labs-leanstral-1-5",
+      "displayName": "Labs Leanstral 1 5",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "ministral-3b-2512",
+      "displayName": "Ministral 3B 2512",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "ministral-3b-latest",
+      "displayName": "Ministral 3B Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "ministral-8b-2512",
+      "displayName": "Ministral 8B 2512",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "ministral-14b-2512",
+      "displayName": "Ministral 14B 2512",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-medium",
+      "displayName": "Mistral Medium",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-medium-3.5",
+      "displayName": "Mistral Medium 3 5",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-medium-3",
+      "displayName": "Mistral Medium 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-medium-2604",
+      "displayName": "Mistral Medium 2604",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-vibe-cli-latest",
+      "displayName": "Mistral Vibe CLI Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-vibe-cli-with-tools",
+      "displayName": "Mistral Vibe CLI With Tools",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-ocr-2512",
+      "displayName": "Mistral OCR 2512",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-ocr-3-0",
+      "displayName": "Mistral OCR 3 0",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-ocr-3",
+      "displayName": "Mistral OCR 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-ocr-4-0",
+      "displayName": "Mistral OCR 4 0",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-ocr-latest",
+      "displayName": "Mistral OCR Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-ocr-4",
+      "displayName": "Mistral OCR 4",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "mistral-ocr-4-1",
+      "displayName": "Mistral OCR 4 1",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-2602",
+      "displayName": "Voxtral Mini 2602",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-latest",
+      "displayName": "Voxtral Mini Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-transcribe-realtime-2602",
+      "displayName": "Voxtral Mini Transcribe Realtime 2602",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-realtime-2602",
+      "displayName": "Voxtral Mini Realtime 2602",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-realtime-latest",
+      "displayName": "Voxtral Mini Realtime Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": null,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     }

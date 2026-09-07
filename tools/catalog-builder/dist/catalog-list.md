@@ -1,8 +1,8 @@
-# 自维护目录清单 v2026.09.07.2
+# 自维护目录清单 v2026.09.07.6
 
-- 生成时间: 2026-09-07
-- 模型总数: 377（其中 19 个禁用：官方自带 2 + 冒烟对账 17）
-- ✅ = 最近一轮冒烟即时可用 | ~~删除线~~ = 已禁用（连续两轮确定性死行，复活自动解禁）
+- 生成时间: 2026-09-07（新录 groq/cerebras/mistral/aihorde 四把 key）
+- 模型总数: 403（26 平台；较上版 +31：mistral +27、groq +2、cerebras +1）
+- ✅ = 冒烟实测可用 | ~~删除线~~ = 冒烟对账禁用（复活自动解禁）
 
 ---
 
@@ -161,6 +161,47 @@
 | @cf/zai-org/glm-5.3 | - | 🔧 | 启用 |
 | @cf/zai-org/glm-5.3-flash | - | 🔧 | 启用 |
 
+## mistral（36）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| codestral-latest | 250K | 🔧 | 启用 |
+| labs-leanstral-1-5 | - | 🔧 | 启用 |
+| labs-leanstral-1-5-1 | - | 🔧 | 启用 |
+| magistral-medium-latest | 128K | 🔧 | 启用 |
+| magistral-small-latest | 128K | 🔧 | 启用 |
+| ministral-14b-2512 | - | 🔧 | 启用 |
+| ministral-14b-latest | 256K | 🔧 | 启用 |
+| ministral-3b-2512 | - | 🔧 | 启用 |
+| ministral-3b-latest | - | 🔧 | 启用 |
+| ministral-8b-2512 | - | 🔧 | 启用 |
+| ministral-8b-latest | 256K | 🔧 | 启用 |
+| mistral-code-fim-latest | - | 🔧 | 启用 |
+| mistral-code-latest | 250K | 🔧 | 启用 |
+| mistral-medium | - | 🔧 | 启用 |
+| mistral-medium-2604 | - | 🔧 | 启用 |
+| mistral-medium-3 | - | 🔧 | 启用 |
+| mistral-medium-3.5 | - | 🔧 | 启用 |
+| mistral-medium-latest | 128K | 🔧 | 启用 |
+| mistral-ocr-2512 | - | 🔧 | 启用 |
+| mistral-ocr-3 | - | 🔧 | 启用 |
+| mistral-ocr-3-0 | - | 🔧 | 启用 |
+| mistral-ocr-4 | - | 🔧 | 启用 |
+| mistral-ocr-4-0 | - | 🔧 | 启用 |
+| mistral-ocr-4-1 | - | 🔧 | 启用 |
+| mistral-ocr-latest | - | 🔧 | 启用 |
+| mistral-small-latest | 256K | 🔧 | 启用 |
+| mistral-vibe-cli-fast | 256K | 🔧 | 启用 |
+| mistral-vibe-cli-latest | - | 🔧 | 启用 |
+| mistral-vibe-cli-with-tools | - | 🔧 | 启用 |
+| voxtral-mini-2602 | - | 🔧 | 启用 |
+| voxtral-mini-latest | - | 🔧 | 启用 |
+| voxtral-mini-realtime-2602 | - | 🔧 | 启用 |
+| voxtral-mini-realtime-latest | - | 🔧 | 启用 |
+| voxtral-mini-transcribe-realtime-2602 | - | 🔧 | 启用 |
+| voxtral-small-2507 | - | 🔧 | 启用 |
+| voxtral-small-latest | - | 🔧 | 启用 |
+
 ## google（31）
 
 | 模型 | 上下文 | 能力 | 状态 |
@@ -248,6 +289,26 @@
 | koboldcpp/mradermacher/Cerebras-GPT-111M-instruction-GGUF | 4K |  | 启用 |
 | koboldcpp/mradermacher/pythia-70m-deduped.f16.gguf | 4K |  | 启用 |
 
+## openrouter（15）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| cohere/north-mini-code:free | 250K | 🔧 | 启用 |
+| dots-studio/dots-3-note-preview:free | 500K | 👁🔧 | 启用 |
+| google/gemma-4-26b-a4b-it:free | 256K |  | 启用 |
+| google/gemma-4-31b-it:free | 256K |  | 启用 |
+| inclusionai/ling-3.0-flash-fin:free | 256K | 🔧 | 启用 |
+| inclusionai/ling-3.0-flash-sante:free | 256K | 🔧 | 启用 |
+| liquid/lfm-2.5-2.6b:free | 64K | 🔧 | 启用 |
+| nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free | 256K |  | 启用 |
+| nvidia/nemotron-3-super-120b-a12b:free | 977K | 🔧 | 启用 |
+| ~~nvidia/nemotron-3-ultra-550b-a55b:free~~ | 977K | 🔧 | **禁用** |
+| nvidia/nemotron-3.5-content-safety:free | 125K |  | 启用 |
+| nvidia/nemotron-3.5-lightning:free | 977K | 🔧 | 启用 |
+| poolside/laguna-s-2.1:free | 256K | 🔧 | 启用 |
+| poolside/laguna-xs-2.1:free | 128K |  | 启用 |
+| thinkingmachines/inkling-small:free | 1024K | 👁🔧 | 启用 |
+
 ## ovh（15）
 
 | 模型 | 上下文 | 能力 | 状态 |
@@ -267,43 +328,6 @@
 | Qwen3Guard-Gen-8B | 32K |  | 启用 |
 | gpt-oss-120b | 128K | 🔧 | 启用 |
 | gpt-oss-20b | 128K | 🔧 | 启用 |
-
-## openrouter（14）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| cohere/north-mini-code:free | 250K | 🔧 | 启用 |
-| dots-studio/dots-3-note-preview:free | 500K | 👁🔧 | 启用 |
-| google/gemma-4-26b-a4b-it:free | 256K |  | 启用 |
-| google/gemma-4-31b-it:free | 256K |  | 启用 |
-| inclusionai/ling-3.0-flash-fin:free | 256K | 🔧 | 启用 |
-| liquid/lfm-2.5-2.6b:free | 64K | 🔧 | 启用 |
-| nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free | 256K |  | 启用 |
-| nvidia/nemotron-3-super-120b-a12b:free | 977K | 🔧 | 启用 |
-| ~~nvidia/nemotron-3-ultra-550b-a55b:free~~ | 977K | 🔧 | **禁用** |
-| nvidia/nemotron-3.5-content-safety:free | 125K |  | 启用 |
-| nvidia/nemotron-3.5-lightning:free | 977K | 🔧 | 启用 |
-| poolside/laguna-s-2.1:free | 256K | 🔧 | 启用 |
-| poolside/laguna-xs-2.1:free | 128K |  | 启用 |
-| thinkingmachines/inkling-small:free | 1024K | 👁🔧 | 启用 |
-
-## mistral（13）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| codestral-latest | 250K | 🔧 | 启用 |
-| devstral-latest | 256K | 🔧 | 启用 |
-| devstral-medium-latest | 128K | 🔧 | 启用 |
-| magistral-medium-latest | 128K | 🔧 | 启用 |
-| magistral-small-latest | 128K | 🔧 | 启用 |
-| ministral-14b-latest | 256K | 🔧 | 启用 |
-| ministral-8b-latest | 256K | 🔧 | 启用 |
-| mistral-code-agent-latest | 250K | 🔧 | 启用 |
-| mistral-code-latest | 250K | 🔧 | 启用 |
-| mistral-large-latest | 256K | 🔧 | 启用 |
-| mistral-medium-latest | 128K | 🔧 | 启用 |
-| mistral-small-latest | 256K | 🔧 | 启用 |
-| mistral-vibe-cli-fast | 256K | 🔧 | 启用 |
 
 ## nvidia（12）
 
@@ -338,6 +362,22 @@
 | command-r7b-12-2024 | 128K | 🔧 | 启用 |
 | north-mini-code-1-0 | 250K | 🔧 | 启用 |
 
+## groq（11）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| allam-2-7b | 4K |  | 启用 |
+| canopylabs/orpheus-arabic-saudi | 4K | 🔧 | 启用 |
+| canopylabs/orpheus-v1-english | 4K | 🔧 | 启用 |
+| groq/compound | 128K | 👁 | 启用 |
+| groq/compound-mini | 128K |  | 启用 |
+| meta-llama/llama-prompt-guard-2-22m | 1K |  | 启用 |
+| meta-llama/llama-prompt-guard-2-86m | 1K |  | 启用 |
+| openai/gpt-oss-120b | 128K | 🔧 | 启用 |
+| openai/gpt-oss-20b | 128K | 🔧 | 启用 |
+| openai/gpt-oss-safeguard-20b | 128K | 🔧 | 启用 |
+| qwen/qwen3.6-27b | 128K | 🔧 | 启用 |
+
 ## modelscope（11）
 
 | 模型 | 上下文 | 能力 | 状态 |
@@ -369,27 +409,12 @@
 | poolside/laguna-xs-2.1:free | 256K | 🔧 | 启用 |
 | stepfun/step-3.7-flash:free | 256K |  | 启用 |
 
-## groq（9）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| allam-2-7b | 4K |  | 启用 |
-| groq/compound | 128K | 👁 | 启用 |
-| groq/compound-mini | 128K |  | 启用 |
-| meta-llama/llama-prompt-guard-2-22m | 1K |  | 启用 |
-| meta-llama/llama-prompt-guard-2-86m | 1K |  | 启用 |
-| openai/gpt-oss-120b | 128K | 🔧 | 启用 |
-| openai/gpt-oss-20b | 128K | 🔧 | 启用 |
-| openai/gpt-oss-safeguard-20b | 128K | 🔧 | 启用 |
-| qwen/qwen3.6-27b | 128K | 🔧 | 启用 |
-
-## opencode（9）
+## opencode（8）
 
 | 模型 | 上下文 | 能力 | 状态 |
 |---|---|---|---|
 | ~~big-pickle~~ | 128K |  | **禁用** |
 | deepseek-v4-flash-free | 128K | 🔧 | 启用 |
-| laguna-s-2.1-free | 256K | 🔧 | 启用 |
 | ling-3.0-flash-fin-free | - | 🔧 | 启用 |
 | mimo-v2.5-free | 128K |  | 启用 |
 | muse-spark-1.2-contributor-free | - | 🔧 | 启用 |
@@ -512,4 +537,10 @@
 |---|---|---|---|
 | agnes-2.0-flash | 256K | 👁🔧 | 启用 |
 | agnes-2.5-flash | 256K | 👁🔧 | 启用 |
+
+## cerebras（1）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| qwen-3.8-27b | - | 🔧 | 启用 |
 
