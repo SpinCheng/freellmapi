@@ -4,14 +4,8 @@
   "platforms": {
     "groq": {
       "source": "https://console.groq.com/docs/rate-limits",
-      "note": "免费 Developer 层按组织级限流；TPM 随模型 6K-30K+，此处取保守中值；月额度按 RPD 14.4K × 保守均值折算",
-      "limits": {
-        "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
-        "tpd": null
-      },
-      "monthly": "~30M"
+      "note": "限流保留官方逐模型表（RPM/RPD/TPM 按模型差异大，平台级拍平会失真）；月额度按 RPD 250-1000 × ~2K 折算",
+      "monthly": "~6-15M"
     },
     "mistral": {
       "source": "https://docs.mistral.ai/admin/billing-usage/usage-limits",
@@ -136,14 +130,13 @@
     },
     "zhipu": {
       "source": "零余额实测（2026-09-03）+ bigmodel.cn 文档",
-      "note": "flash 系免费（并发型限制，无公开 RPM/RPD 表）；turbo/plus 系付费；无公开月额度",
+      "note": "flash 系免费（并发型限制，无公开 RPM 表）；月额度与 tpd 保留官方实测标注（~30M / 1M/天）",
       "limits": {
         "rpm": 10,
         "rpd": null,
         "tpm": null,
         "tpd": null
-      },
-      "monthly": ""
+      }
     },
     "huggingface": {
       "source": "HF Inference Providers 文档",
