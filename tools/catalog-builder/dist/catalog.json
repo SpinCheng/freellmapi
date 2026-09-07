@@ -1,6 +1,6 @@
 {
-  "version": "2026.09.07T37186",
-  "generatedAt": "2026-09-07T10:19:46.463Z",
+  "version": "2026.09.07T37622",
+  "generatedAt": "2026-09-07T10:27:02.698Z",
   "tier": "monthly",
   "counts": {
     "models": 411,
@@ -723,7 +723,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -743,7 +743,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -817,7 +817,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -1177,7 +1177,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1546,7 +1546,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -2494,7 +2494,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -2514,7 +2514,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2534,7 +2534,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -2554,7 +2554,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -9342,7 +9342,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9361,7 +9361,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9380,7 +9380,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9399,7 +9399,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9418,7 +9418,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9437,7 +9437,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9456,7 +9456,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9475,7 +9475,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9494,7 +9494,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9513,7 +9513,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9532,7 +9532,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9551,7 +9551,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9570,7 +9570,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9589,7 +9589,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9608,7 +9608,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9627,7 +9627,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9646,7 +9646,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9665,7 +9665,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9684,7 +9684,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9703,7 +9703,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9722,7 +9722,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9741,7 +9741,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9760,7 +9760,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9779,7 +9779,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9798,7 +9798,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9817,7 +9817,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9836,7 +9836,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~500-1000M",
+      "monthlyTokenBudget": "~50-100M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,

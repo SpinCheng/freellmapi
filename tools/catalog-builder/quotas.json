@@ -15,14 +15,14 @@
     },
     "mistral": {
       "source": "https://docs.mistral.ai/admin/billing-usage/usage-limits",
-      "note": "Experiment 免费层：1 req/s、500K TPM、约 1B tokens/月；实测连发第 2 发即限流，按保守 RPM 2 配置；官方 ~1B/月，取保守区间（parseBudget 读高端）",
+      "note": "官方曾标注 ~1B tokens/月（理论天花板），但实测 RPM≈2 将有效月吞吐锁在 ~50-100M（与官方目录维护者标注一致）；500K TPM 同样不可达；2026 起官方不再公开该数字",
       "limits": {
         "rpm": 2,
         "rpd": null,
         "tpm": 500000,
         "tpd": null
       },
-      "monthly": "~500-1000M"
+      "monthly": "~50-100M"
     },
     "google": {
       "source": "https://ai.google.dev/gemini-api/docs/rate-limits",
