@@ -122,6 +122,13 @@ const okLat = results.filter((r) => r.status === 'ok').map((r) => r.latencyMs).s
 if (okLat.length) console.log(`成功延迟: p50=${okLat[Math.floor(okLat.length / 2)]}ms p95=${okLat[Math.floor(okLat.length * 0.95)]}ms`);
 fs.writeFileSync(path.join(WORK, 'smoke-report.json'), JSON.stringify({ testedAt: new Date().toISOString(), summary: by, transitions, results }, null, 2));
 fs.copyFileSync(path.join(WORK, 'smoke-report.json'), PREV);
+// 归档历史（供 build 的两轮独立判定取最近两份不同时间的报告；保留最近 10 份）
+const HIST = path.join(WORK, 'smoke-history');
+fs.mkdirSync(HIST, { recursive: true });
+const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+fs.copyFileSync(path.join(WORK, 'smoke-report.json'), path.join(HIST, `smoke-${stamp}.json`));
+const archives = fs.readdirSync(HIST).filter((f) => f.endsWith('.json')).sort();
+while (archives.length > 10) fs.rmSync(path.join(HIST, archives.shift()));
 console.log('\n明细已写入 work/smoke-report.json');
 
 // 失败清单（速览）

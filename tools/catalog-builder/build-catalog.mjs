@@ -126,6 +126,98 @@ for (const [platform, res] of Object.entries(fetched)) {
   if (n) console.log(`[add] ${platform}: 新增 ${n} 个`);
 }
 
+// ── 5.5 冒烟对账：两轮独立冒烟都判死的模型行 → 禁用；曾由冒烟禁用且本轮复活 → 恢复 ──
+// 保险丝：
+//  a) 必须两轮"不同时间"的独立冒烟都死才禁用——限流/付费/超时/502 都不算死：
+//     502 是"上游错误"混合桶（含限流级联、代理抖动），只有 400/404/unavailable
+//     这类确定性拒绝（模型不在 chat 接口上服务）才足以自动禁用
+//  b) 一票否决：任何历史轮次 ok 过的模型名，本轮不禁（近期有存活证据）
+//  c) 网络探测 unreachable 的平台，其模型本轮不参与禁用判定（代理故障 ≠ 模型死了）
+//  d) 只禁用"有可用 key 的平台"上的行（keyless 平台从未被测过，不下结论）
+//  e) 每轮先自愈：恢复上一轮由冒烟禁用的行，再重新判定（防止规则收紧/放宽后状态残留）
+const DEAD_STATUS = new Set(['http_400', 'http_404', 'unavailable']);
+const SMOKE_FRESH_MS = 7 * 24 * 3600 * 1000;
+const smokeStatePath = path.join(WORK, 'smoke-disabled.json');
+let smokeDisabled = [];
+try { smokeDisabled = JSON.parse(fs.readFileSync(smokeStatePath, 'utf8')); } catch { /* 首次运行为空 */ }
+
+try {
+  // 优先从冒烟历史取最近两份不同时间的报告（smoke-report.prev 在 check-models 收尾时
+  // 会被当前报告覆盖，紧跟着构建时两者相同，无法作为"第二轮独立样本"）
+  const HIST = path.join(WORK, 'smoke-history');
+  let cur, prev;
+  if (fs.existsSync(HIST)) {
+    const archives = fs.readdirSync(HIST).filter((f) => f.endsWith('.json')).sort();
+    const loads = archives.slice(-2).map((f) => JSON.parse(fs.readFileSync(path.join(HIST, f), 'utf8')));
+    if (loads.length === 2 && loads[0].testedAt !== loads[1].testedAt) { [prev, cur] = loads; }
+  }
+  if (!cur) {
+    cur = JSON.parse(fs.readFileSync(path.join(WORK, 'smoke-report.json'), 'utf8'));
+    prev = JSON.parse(fs.readFileSync(path.join(WORK, 'smoke-report.prev.json'), 'utf8'));
+  }
+  const distinctRun = cur.testedAt !== prev.testedAt;
+  const fresh = Date.now() - Date.parse(cur.testedAt) < SMOKE_FRESH_MS;
+
+  const prevBy = new Map(prev.results.map((r) => [r.model, r.status]));
+  const deadNames = new Set(cur.results
+    .filter((r) => DEAD_STATUS.has(r.status) && DEAD_STATUS.has(prevBy.get(r.model)))
+    .map((r) => r.model));
+  // 一票否决：任何历史轮次（含当前）ok 过的名字，不准禁用（近期有存活证据）
+  const everOk = new Set(cur.results.filter((r) => /^ok/.test(r.status)).map((r) => r.model));
+  if (fs.existsSync(HIST)) {
+    for (const f of fs.readdirSync(HIST).filter((f) => f.endsWith('.json'))) {
+      try {
+        const arch = JSON.parse(fs.readFileSync(path.join(HIST, f), 'utf8'));
+        for (const r of arch.results ?? []) if (/^ok/.test(r.status)) everOk.add(r.model);
+      } catch { /* 单个归档损坏不影响整体 */ }
+    }
+  }
+
+  // 网络预检：unreachable 的平台豁免
+  const { probeNetwork } = await import('./net-probe.mjs');
+  const probe = await probeNetwork();
+  const unreachable = new Set(probe.filter((r) => r.verdict === 'unreachable').map((r) => r.platform));
+  const keyedPlatforms = new Set(Object.entries(fetched).filter(([, v]) => v?.ok).map(([k]) => k));
+
+  // 自愈：先恢复上一轮由冒烟禁用的行，再重新判定（规则收紧/放宽后不留残留状态）
+  if (smokeDisabled.length) {
+    let restored = 0;
+    for (const key of smokeDisabled) {
+      const [p, id] = key.split('|');
+      const row = base.models.find((m) => m.platform === p && m.modelId === id);
+      if (row && !row.enabled) { row.enabled = true; restored++; }
+    }
+    smokeDisabled = [];
+    if (restored) console.log(`[smoke] 自愈：恢复上轮冒烟禁用的 ${restored} 个行，重新判定`);
+  }
+
+  if (!fresh) {
+    console.log('[smoke] 冒烟报告超过 7 天，跳过禁用判定');
+  } else if (!distinctRun) {
+    console.log('[smoke] 历史报告与当前为同一次运行——需要两轮独立冒烟才禁用，本轮跳过');
+  } else if (deadNames.size) {
+    let disabledNow = 0;
+    for (const m of base.models) {
+      if (!m.enabled) continue;
+      if (!deadNames.has(m.modelId) && !deadNames.has(shortName(m.modelId))) continue;
+      if (everOk.has(m.modelId) || everOk.has(shortName(m.modelId))) continue;
+      if (!keyedPlatforms.has(m.platform) || unreachable.has(m.platform)) continue;
+      m.enabled = false;
+      smokeDisabled.push(`${m.platform}|${m.modelId}`);
+      disabledNow++;
+      report.skipped.push(`smoke-dead: ${m.platform}/${m.modelId}`);
+    }
+    console.log(`[smoke] 连续两轮确定性死行（400/404/unavailable）禁用: ${disabledNow} 个` +
+      `（502 仅报告不禁用；${everOk.size} 个历史存活名受一票否决保护）` +
+      (unreachable.size ? `；${[...unreachable].join(',')} 网络不可达已豁免` : ''));
+  } else {
+    console.log('[smoke] 无连续两轮死行，本轮不禁用');
+  }
+  fs.writeFileSync(smokeStatePath, JSON.stringify(smokeDisabled, null, 2));
+} catch (e) {
+  console.log(`[smoke] 无冒烟报告可对账（${String(e.message).slice(0, 60)}）`);
+}
+
 // ── 6. 版本号与元数据 ─────────────────────────────────────────────────
 // 规范化：models 表的 NOT NULL 列不允许 null（官方用 "~3M" 之类字符串，未知给空串）
 for (const m of base.models) {

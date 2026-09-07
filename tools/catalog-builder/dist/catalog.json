@@ -1,6 +1,6 @@
 {
-  "version": "2026.09.04",
-  "generatedAt": "2026-09-04T02:58:45.685Z",
+  "version": "2026.09.07.2",
+  "generatedAt": "2026-09-07T08:40:05.305Z",
   "tier": "monthly",
   "counts": {
     "models": 385,
@@ -590,7 +590,7 @@
       },
       "monthlyTokenBudget": "promo (trial)",
       "contextWindow": 131072,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": false,
       "quirks": [
@@ -1179,7 +1179,7 @@
       },
       "monthlyTokenBudget": "~3M",
       "contextWindow": 1048576,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": true,
       "supportsTools": true,
       "quirks": []
@@ -1528,7 +1528,7 @@
       },
       "monthlyTokenBudget": "~3M",
       "contextWindow": 1048576,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": true,
       "supportsTools": true,
       "quirks": []
@@ -8806,7 +8806,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": 131072,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8825,7 +8825,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": 131072,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8844,7 +8844,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": 131072,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8863,7 +8863,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": 131072,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8977,7 +8977,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8996,7 +8996,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9053,7 +9053,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9110,7 +9110,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9148,7 +9148,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9186,7 +9186,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9262,7 +9262,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9319,7 +9319,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9338,7 +9338,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9357,7 +9357,7 @@
       },
       "monthlyTokenBudget": "",
       "contextWindow": null,
-      "enabled": true,
+      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     }
