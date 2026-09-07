@@ -1,10 +1,10 @@
 {
-  "version": "2026.09.07T39060",
-  "generatedAt": "2026-09-07T10:51:00.860Z",
+  "version": "2026.09.07T39224",
+  "generatedAt": "2026-09-07T10:53:44.173Z",
   "tier": "monthly",
   "counts": {
-    "models": 411,
-    "quirks": 30
+    "models": 402,
+    "quirks": 34
   },
   "platforms": [
     {
@@ -98,10 +98,6 @@
     {
       "id": "requesty",
       "name": "Requesty"
-    },
-    {
-      "id": "routeway",
-      "name": "Routeway"
     },
     {
       "id": "sealion",
@@ -323,8 +319,8 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
+        "rpd": 250,
+        "tpm": 70000,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
@@ -343,9 +339,9 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
-        "tpd": null
+        "rpd": 1000,
+        "tpm": 8000,
+        "tpd": 200000
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 131072,
@@ -913,8 +909,8 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
+        "rpd": 250,
+        "tpm": 70000,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
@@ -933,9 +929,9 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
-        "tpd": null
+        "rpd": 1000,
+        "tpm": 8000,
+        "tpd": 200000
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 131072,
@@ -953,9 +949,9 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
-        "tpd": null
+        "rpd": 1000,
+        "tpm": 8000,
+        "tpd": 200000
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 131072,
@@ -1010,7 +1006,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1197,7 +1193,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -1261,33 +1257,6 @@
           "slug": "keyless-anonymous",
           "title": "No API key required",
           "body": "Routes anonymously — the catalog ships a keyless sentinel row and calls work with no account or key.",
-          "severity": "info"
-        }
-      ]
-    },
-    {
-      "platform": "nvidia",
-      "modelId": "nvidia/nemotron-3-nano-30b-a3b",
-      "displayName": "Nemotron 3 Nano 30B (NV)",
-      "intelligenceRank": 22,
-      "speedRank": 9,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 40,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~30M",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": false,
-      "quirks": [
-        {
-          "slug": "nvidia-rate-limited",
-          "title": "Recurring free, 40 RPM, eval-only ToS",
-          "body": "NVIDIA NIM replaced its depleting trial credits with a recurring per-account rate limit (40 RPM default, varies by model), verified June 2026. The trial ToS still scopes usage to evaluation/prototyping, not production.",
           "severity": "info"
         }
       ]
@@ -1761,7 +1730,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1850,10 +1819,10 @@
       "speedRank": 2,
       "sizeLabel": "Medium",
       "limits": {
-        "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
-        "tpd": null
+        "rpm": 60,
+        "rpd": 1000,
+        "tpm": 6000,
+        "tpd": 500000
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 131072,
@@ -1900,47 +1869,6 @@
           "severity": "info"
         }
       ]
-    },
-    {
-      "platform": "routeway",
-      "modelId": "llama-3.3-70b-instruct:free",
-      "displayName": "Llama 3.3 70B Instruct (Routeway free)",
-      "intelligenceRank": 10,
-      "speedRank": 7,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": 5,
-        "rpd": 200,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "free · ~5 rpm · 200 rpd",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": []
-    },
-    {
-      "platform": "routeway",
-      "modelId": "llama-3.2-3b-instruct:free",
-      "displayName": "Llama 3.2 3B Instruct (Routeway free)",
-      "intelligenceRank": 18,
-      "speedRank": 10,
-      "sizeLabel": "Small",
-      "limits": {
-        "rpm": 5,
-        "rpd": 200,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "free · ~5 rpm · 200 rpd",
-      "contextWindow": 16000,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [],
-      "premiumSince": "2026-07-19T18:44:22.000Z"
     },
     {
       "platform": "bazaarlink",
@@ -2209,9 +2137,9 @@
       "sizeLabel": "Small",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
-        "tpd": null
+        "rpd": 1000,
+        "tpm": 6000,
+        "tpd": 500000
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 4096,
@@ -2426,60 +2354,6 @@
         "tpm": null,
         "tpd": null
       }
-    },
-    {
-      "platform": "nara",
-      "modelId": "mistral-large",
-      "displayName": "Mistral Large 3 (NaraRouter)",
-      "intelligenceRank": 14,
-      "speedRank": 5,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 10,
-        "rpd": null,
-        "tpm": null,
-        "tpd": 7000000
-      },
-      "monthlyTokenBudget": "free · 7M/day shared",
-      "contextWindow": 252000,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "nara-free-plan",
-          "title": "Daily free quota",
-          "body": "NaraRouter free access requires a no-card account key plus Telegram channel/link verification. The free plan is documented at 7M tokens/day and 10 req/min, with daily reset.",
-          "severity": "info"
-        }
-      ]
-    },
-    {
-      "platform": "nara",
-      "modelId": "mistral-medium-3-5",
-      "displayName": "Mistral Medium 3.5 (NaraRouter)",
-      "intelligenceRank": 14,
-      "speedRank": 5,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": 10,
-        "rpd": null,
-        "tpm": null,
-        "tpd": 7000000
-      },
-      "monthlyTokenBudget": "free · 7M/day shared",
-      "contextWindow": 256000,
-      "enabled": true,
-      "supportsVision": true,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "nara-free-plan",
-          "title": "Daily free quota",
-          "body": "NaraRouter free access requires a no-card account key plus Telegram channel/link verification. The free plan is documented at 7M tokens/day and 10 req/min, with daily reset.",
-          "severity": "info"
-        }
-      ]
     },
     {
       "platform": "mistral",
@@ -2897,26 +2771,6 @@
     },
     {
       "platform": "aion",
-      "modelId": "aion-labs/aion-2.5",
-      "displayName": "Aion 2.5",
-      "intelligenceRank": 13,
-      "speedRank": 6,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": 15,
-        "rpd": null,
-        "tpm": 20000,
-        "tpd": 20000
-      },
-      "monthlyTokenBudget": "free · 20k tok/day",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": false,
-      "quirks": []
-    },
-    {
-      "platform": "aion",
       "modelId": "aion-labs/aion-2.0",
       "displayName": "Aion 2.0",
       "intelligenceRank": 14,
@@ -3115,26 +2969,6 @@
           "severity": "info"
         }
       ]
-    },
-    {
-      "platform": "routeway",
-      "modelId": "step-3.7-flash:free",
-      "displayName": "StepFun Step 3.7 Flash (Routeway free)",
-      "intelligenceRank": 10,
-      "speedRank": 7,
-      "sizeLabel": "Frontier",
-      "limits": {
-        "rpm": 5,
-        "rpd": 200,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "free · ~5 rpm · 200 rpd",
-      "contextWindow": 256000,
-      "enabled": true,
-      "supportsVision": true,
-      "supportsTools": true,
-      "quirks": []
     },
     {
       "platform": "navy",
@@ -5380,8 +5214,8 @@
       "sizeLabel": "Audio",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
+        "rpd": 1000,
+        "tpm": 70000,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
@@ -5402,8 +5236,8 @@
       "sizeLabel": "Audio",
       "limits": {
         "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
+        "rpd": 1000,
+        "tpm": 70000,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
@@ -5456,26 +5290,6 @@
       "quirks": [],
       "modality": "audio",
       "mediaNote": "Speech-to-text"
-    },
-    {
-      "platform": "ollama",
-      "modelId": "minimax-m3",
-      "displayName": "MiniMax M3 (Ollama)",
-      "intelligenceRank": 5,
-      "speedRank": 8,
-      "sizeLabel": "Frontier",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~5-10M",
-      "contextWindow": 1000192,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": []
     },
     {
       "platform": "ollama",
@@ -5776,7 +5590,7 @@
       "limits": {
         "rpm": 30,
         "rpd": 14400,
-        "tpm": 12000,
+        "tpm": 15000,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
@@ -5797,7 +5611,7 @@
       "limits": {
         "rpm": 30,
         "rpd": 14400,
-        "tpm": 12000,
+        "tpm": 15000,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
@@ -7931,27 +7745,6 @@
       "premiumSince": "2026-07-30T00:40:21.000Z"
     },
     {
-      "platform": "google",
-      "modelId": "gemini-2.5-pro",
-      "displayName": "Gemini 2.5 Pro",
-      "intelligenceRank": 14,
-      "speedRank": 8,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": 5,
-        "rpd": 50,
-        "tpm": 250000,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~10M",
-      "contextWindow": 1048576,
-      "enabled": true,
-      "supportsVision": true,
-      "supportsTools": true,
-      "quirks": [],
-      "premiumSince": "2026-08-01T10:40:27.000Z"
-    },
-    {
       "platform": "ainative",
       "modelId": "llama-4-scout",
       "displayName": "Llama 4 Scout (AINative)",
@@ -8264,6 +8057,158 @@
         }
       ],
       "premiumSince": "2026-08-01T10:40:27.000Z"
+    },
+    {
+      "platform": "google",
+      "modelId": "gemini-robotics-er-2-preview",
+      "displayName": "Gemini Robotics-ER 2 Preview",
+      "intelligenceRank": 22,
+      "speedRank": 5,
+      "sizeLabel": "Medium",
+      "limits": {
+        "rpm": 10,
+        "rpd": 200,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~10M",
+      "contextWindow": 131072,
+      "enabled": true,
+      "supportsVision": true,
+      "supportsTools": false,
+      "quirks": [],
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/google/gemma-2b-it-lora",
+      "displayName": "Gemma 2B IT LoRA (CF)",
+      "intelligenceRank": 78,
+      "speedRank": 10,
+      "sizeLabel": "2B",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": 8192,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": false,
+      "quirks": [
+        {
+          "slug": "cloudflare-key-format",
+          "title": "Key is account_id:token",
+          "body": "Cloudflare Workers AI authenticates with a combined credential in the form \"account_id:token\", not a bare token.",
+          "severity": "info"
+        }
+      ],
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/mistral/mistral-7b-instruct-v0.2-lora",
+      "displayName": "Mistral 7B Instruct v0.2 LoRA (CF)",
+      "intelligenceRank": 66,
+      "speedRank": 9,
+      "sizeLabel": "7B",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": 32768,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": false,
+      "quirks": [
+        {
+          "slug": "cloudflare-key-format",
+          "title": "Key is account_id:token",
+          "body": "Cloudflare Workers AI authenticates with a combined credential in the form \"account_id:token\", not a bare token.",
+          "severity": "info"
+        }
+      ],
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/meta-llama/llama-2-7b-chat-hf-lora",
+      "displayName": "Llama 2 7B Chat LoRA (CF)",
+      "intelligenceRank": 76,
+      "speedRank": 9,
+      "sizeLabel": "7B",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": 8192,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": false,
+      "quirks": [
+        {
+          "slug": "cloudflare-key-format",
+          "title": "Key is account_id:token",
+          "body": "Cloudflare Workers AI authenticates with a combined credential in the form \"account_id:token\", not a bare token.",
+          "severity": "info"
+        }
+      ],
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/google/gemma-7b-it-lora",
+      "displayName": "Gemma 7B IT LoRA (CF)",
+      "intelligenceRank": 70,
+      "speedRank": 8,
+      "sizeLabel": "7B",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": 8192,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": false,
+      "quirks": [
+        {
+          "slug": "cloudflare-key-format",
+          "title": "Key is account_id:token",
+          "body": "Cloudflare Workers AI authenticates with a combined credential in the form \"account_id:token\", not a bare token.",
+          "severity": "info"
+        }
+      ],
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "inclusionai/ling-3.0-flash-sante:free",
+      "displayName": "Ling 3 0 Flash Sante",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
     },
     {
       "platform": "openrouter",
@@ -8647,25 +8592,6 @@
     },
     {
       "platform": "google",
-      "modelId": "gemini-robotics-er-2-preview",
-      "displayName": "Gemini Robotics ER 2 Preview",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 10,
-        "rpd": 200,
-        "tpm": 250000,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~10M",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "google",
       "modelId": "gemini-2.5-computer-use-preview-10-2025",
       "displayName": "Gemini 2 5 Computer USE Preview 10 2025",
       "intelligenceRank": 5,
@@ -8760,519 +8686,6 @@
       "supportsTools": true
     },
     {
-      "platform": "opencode",
-      "modelId": "muse-spark-1.3-contributor-free",
-      "displayName": "Muse Spark 1 3 Contributor Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "opencode",
-      "modelId": "muse-spark-1.2-contributor-free",
-      "displayName": "Muse Spark 1 2 Contributor Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "opencode",
-      "modelId": "ling-3.0-flash-fin-free",
-      "displayName": "Ling 3 0 Flash FIN Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "opencode",
-      "modelId": "nemotron-3.5-lightning-free",
-      "displayName": "Nemotron 3 5 Lightning Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "ovh",
-      "modelId": "Qwen3.8-27B",
-      "displayName": "Qwen3 8 27B",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~10M",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/pipecat-ai/smart-turn-v2",
-      "displayName": "Smart Turn V2",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/huggingface/distilbert-sst-2-int8",
-      "displayName": "Distilbert SST 2 Int8",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/google/gemma-2b-it-lora",
-      "displayName": "Gemma 2B IT Lora",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/mistral/mistral-7b-instruct-v0.2-lora",
-      "displayName": "Mistral 7B Instruct V0 2 Lora",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/deepgram/aura-2-es",
-      "displayName": "Aura 2 ES",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/zai-org/glm-5.3",
-      "displayName": "GLM 5 3",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/llava-hf/llava-1.5-7b-hf",
-      "displayName": "Llava 1 5 7B HF",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/deepgram/nova-3",
-      "displayName": "Nova 3",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/zai-org/glm-5.3-flash",
-      "displayName": "GLM 5 3 Flash",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/microsoft/resnet-50",
-      "displayName": "Resnet 50",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/meta-llama/llama-2-7b-chat-hf-lora",
-      "displayName": "Llama 2 7B Chat HF Lora",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/lykon/dreamshaper-8-lcm",
-      "displayName": "Dreamshaper 8 LCM",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/deepseek-ai/deepseek-v4-flash-0731",
-      "displayName": "Deepseek V4 Flash 0731",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/leonardo/phoenix-1.0",
-      "displayName": "Phoenix 1 0",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/meta/m2m100-1.2b",
-      "displayName": "M2m100 1 2B",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/ai4bharat/indictrans2-en-indic-1B",
-      "displayName": "Indictrans2 EN Indic 1B",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/google/gemma-7b-it-lora",
-      "displayName": "Gemma 7B IT Lora",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/deepseek-ai/deepseek-v4-pro-0813",
-      "displayName": "Deepseek V4 PRO 0813",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/deepgram/aura-1",
-      "displayName": "Aura 1",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/leonardo/lucid-origin",
-      "displayName": "Lucid Origin",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "cloudflare",
-      "modelId": "@cf/deepgram/aura-2-en",
-      "displayName": "Aura 2 EN",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "openrouter",
-      "modelId": "inclusionai/ling-3.0-flash-sante:free",
-      "displayName": "Ling 3 0 Flash Sante",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~5-10M",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
       "platform": "groq",
       "modelId": "canopylabs/orpheus-arabic-saudi",
       "displayName": "Orpheus Arabic Saudi",
@@ -9280,9 +8693,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
@@ -9299,13 +8712,32 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 30,
-        "rpd": 14400,
-        "tpm": 12000,
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 4000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "displayName": "Qwen3 8 27B",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~6-15M",
+      "contextWindow": 131042,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -9841,6 +9273,405 @@
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "muse-spark-1.3-contributor-free",
+      "displayName": "Muse Spark 1 3 Contributor Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "muse-spark-1.2-contributor-free",
+      "displayName": "Muse Spark 1 2 Contributor Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "ling-3.0-flash-fin-free",
+      "displayName": "Ling 3 0 Flash FIN Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "nemotron-3.5-lightning-free",
+      "displayName": "Nemotron 3 5 Lightning Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/pipecat-ai/smart-turn-v2",
+      "displayName": "Smart Turn V2",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/huggingface/distilbert-sst-2-int8",
+      "displayName": "Distilbert SST 2 Int8",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepgram/aura-2-es",
+      "displayName": "Aura 2 ES",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/zai-org/glm-5.3",
+      "displayName": "GLM 5 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/llava-hf/llava-1.5-7b-hf",
+      "displayName": "Llava 1 5 7B HF",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepgram/nova-3",
+      "displayName": "Nova 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/zai-org/glm-5.3-flash",
+      "displayName": "GLM 5 3 Flash",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/microsoft/resnet-50",
+      "displayName": "Resnet 50",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/lykon/dreamshaper-8-lcm",
+      "displayName": "Dreamshaper 8 LCM",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepseek-ai/deepseek-v4-flash-0731",
+      "displayName": "Deepseek V4 Flash 0731",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/leonardo/phoenix-1.0",
+      "displayName": "Phoenix 1 0",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/meta/m2m100-1.2b",
+      "displayName": "M2m100 1 2B",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/ai4bharat/indictrans2-en-indic-1B",
+      "displayName": "Indictrans2 EN Indic 1B",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepseek-ai/deepseek-v4-pro-0813",
+      "displayName": "Deepseek V4 PRO 0813",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepgram/aura-1",
+      "displayName": "Aura 1",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/leonardo/lucid-origin",
+      "displayName": "Lucid Origin",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepgram/aura-2-en",
+      "displayName": "Aura 2 EN",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
     }
   ],
   "quirks": [
@@ -10001,6 +9832,18 @@
         {
           "platform": "opencode",
           "modelGlob": null
+        }
+      ]
+    },
+    {
+      "slug": "opencode-responses-only",
+      "title": "Responses API only",
+      "body": "OpenCode Zen exposes this model through POST /v1/responses rather than /v1/chat/completions. Clients and adapters must use the Responses API transport.",
+      "severity": "warning",
+      "targets": [
+        {
+          "platform": "opencode",
+          "modelGlob": "muse-spark-1.3-contributor-free"
         }
       ]
     },
@@ -10255,6 +10098,42 @@
           "modelGlob": null
         }
       ]
+    },
+    {
+      "slug": "sail-monthly-credit-wallet",
+      "title": "Monthly credit requires a payment method",
+      "body": "Sail grants $5 in free credits each month only while a payment method is attached. Usage becomes pay-as-you-go after that credit is exhausted, so configure Sail spend controls and monitor the account balance. Requests run as background jobs and may remain queued for several minutes.",
+      "severity": "warning",
+      "targets": [
+        {
+          "platform": "sail",
+          "modelGlob": null
+        }
+      ]
+    },
+    {
+      "slug": "radeon-shared-free-rotating",
+      "title": "Free shared roster rotates",
+      "body": "AMD Radeon Cloud's shared Model API is free and does not consume GPU-instance credits. Its public models are experimental and may rotate; per-account request and daily allowance values are reported dynamically in response headers rather than guaranteed as fixed catalog limits.",
+      "severity": "info",
+      "targets": [
+        {
+          "platform": "radeon",
+          "modelGlob": null
+        }
+      ]
+    },
+    {
+      "slug": "radeon-qwen-request-shape",
+      "title": "Strict Qwen request shape",
+      "body": "Qwen3.8 Flash Next accepts at most one leading system message, low or medium reasoning effort, single tool calls, and JSON-object output. The adapter coalesces system instructions, disables parallel tool calls, and downgrades JSON Schema requests to JSON-object mode.",
+      "severity": "info",
+      "targets": [
+        {
+          "platform": "radeon",
+          "modelGlob": "Qwen3.8-Flash-Next"
+        }
+      ]
     }
   ],
   "embeddings": [
@@ -10425,6 +10304,54 @@
       "enabled": true,
       "quotaLabel": "~40 rpm",
       "premiumSince": "2026-07-23T22:58:14.000Z"
+    },
+    {
+      "family": "plamo-embedding-1b",
+      "platform": "cloudflare",
+      "modelId": "@cf/pfnet/plamo-embedding-1b",
+      "displayName": "PLaMo Embedding 1B (CF)",
+      "dimensions": 2048,
+      "maxInputTokens": 4096,
+      "priority": 1,
+      "quotaLabel": "10K neurons/day (shared)",
+      "enabled": true,
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "family": "bge-small-en-v1.5",
+      "platform": "cloudflare",
+      "modelId": "@cf/baai/bge-small-en-v1.5",
+      "displayName": "BGE Small EN v1.5 (CF)",
+      "dimensions": 384,
+      "maxInputTokens": 512,
+      "priority": 1,
+      "quotaLabel": "10K neurons/day (shared)",
+      "enabled": true,
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "family": "bge-base-en-v1.5",
+      "platform": "cloudflare",
+      "modelId": "@cf/baai/bge-base-en-v1.5",
+      "displayName": "BGE Base EN v1.5 (CF)",
+      "dimensions": 768,
+      "maxInputTokens": 512,
+      "priority": 1,
+      "quotaLabel": "10K neurons/day (shared)",
+      "enabled": true,
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "family": "bge-large-en-v1.5",
+      "platform": "cloudflare",
+      "modelId": "@cf/baai/bge-large-en-v1.5",
+      "displayName": "BGE Large EN v1.5 (CF)",
+      "dimensions": 1024,
+      "maxInputTokens": 512,
+      "priority": 1,
+      "quotaLabel": "10K neurons/day (shared)",
+      "enabled": true,
+      "premiumSince": "2026-08-05T15:29:52.000Z"
     }
   ],
   "transcriptionModels": [
@@ -10469,6 +10396,29 @@
       ],
       "requestStyle": "binary",
       "quotaLabel": "Workers AI free allocation"
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/openai/whisper-tiny-en",
+      "displayName": "Whisper Tiny English (Cloudflare Workers AI)",
+      "priority": 5,
+      "subtitleFormats": [
+        "vtt"
+      ],
+      "requestStyle": "binary",
+      "quotaLabel": "Workers AI free allocation",
+      "enabled": true,
+      "premiumSince": "2026-08-05T15:29:52.000Z"
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepgram/nova-3",
+      "displayName": "Deepgram Nova-3 (Cloudflare Workers AI)",
+      "priority": 4,
+      "requestStyle": "binary",
+      "quotaLabel": "Workers AI free allocation",
+      "enabled": true,
+      "premiumSince": "2026-08-05T15:29:52.000Z"
     }
   ],
   "videoModels": []
