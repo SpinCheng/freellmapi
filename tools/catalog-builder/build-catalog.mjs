@@ -262,8 +262,9 @@ for (const m of base.models) {
 }
 
 const today = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
-// 版本必须严格大于"数据库已应用版本"（否则 sync 判 304 不拉取），也要大于基准版本。
-// 同日多次构建时用确定性后缀递增，避免随机数回退。
+// 版本必须严格大于"数据库已应用版本"与基准版本（否则 sync 判 304 不拉取）。
+// 用「日期 + T + 当日秒数（补零）」：T 的码位高于 '.'，对任何旧的 ".数字后缀" 格式
+// 字典序必胜；补零后同日内的字典序 == 数值序。循环兜底保证严格单调（防时钟回拨）。
 let appliedVersion = '';
 try {
   const Database = require('better-sqlite3');
@@ -271,17 +272,11 @@ try {
   appliedVersion = db.prepare("SELECT value FROM settings WHERE key='catalog_applied_version'").get()?.value ?? '';
   db.close();
 } catch { /* 数据库不可用时退化为只对比基准 */ }
-let version = today;
-for (const ceiling of [String(base.version), appliedVersion]) {
-  if (ceiling.startsWith(today) && ceiling.length > today.length) {
-    const prevSuffix = Number(ceiling.slice(today.length + 1));
-    if (Number.isFinite(prevSuffix)) version = `${today}.${Math.max(Number(version.slice(today.length + 1) || 0), prevSuffix) + 1}`;
-  } else if (!(version > ceiling)) {
-    version = `${today}.1`;
-  }
-}
-if (!(version > String(base.version)) || !(version > String(appliedVersion))) {
-  version = `${today}.${Date.now() % 1000000}`;
+const secOfDay = String(Math.floor((Date.now() % 86400000) / 1000)).padStart(5, '0');
+let version = `${today}T${secOfDay}`;
+for (let guard = 0; guard < 1000; guard++) {
+  if (version > String(base.version) && version > String(appliedVersion)) break;
+  version = `${today}T${String(Number(version.slice(today.length + 1)) + 1).padStart(5, '0')}`;
 }
 base.version = version;
 base.tier = 'monthly'; // 自维护源沿用 monthly 语义（live 需要 fla_ 许可）
