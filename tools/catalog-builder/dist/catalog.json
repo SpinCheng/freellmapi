@@ -1,6 +1,6 @@
 {
-  "version": "2026.09.07.6",
-  "generatedAt": "2026-09-07T09:49:38.201Z",
+  "version": "2026.09.07.8",
+  "generatedAt": "2026-09-07T09:56:45.211Z",
   "tier": "monthly",
   "counts": {
     "models": 411,
@@ -122,11 +122,11 @@
       "sizeLabel": "Frontier",
       "limits": {
         "rpm": 10,
-        "rpd": 20,
+        "rpd": 500,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -153,7 +153,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1-3M",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -180,7 +180,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1-3M",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -207,7 +207,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1-3M",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -230,11 +230,11 @@
       "sizeLabel": "Frontier",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "promo (trial)",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -261,7 +261,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -294,7 +294,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~18-45M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -323,11 +323,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 30,
-        "rpd": 250,
-        "tpm": 70000,
+        "rpd": 14400,
+        "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -343,11 +343,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 30,
-        "rpd": 1000,
-        "tpm": 8000,
-        "tpd": 200000
+        "rpd": 14400,
+        "tpm": 12000,
+        "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -387,7 +387,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -420,7 +420,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~18-45M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -443,11 +443,11 @@
       "sizeLabel": "Frontier",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "promo (trial)",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -476,11 +476,11 @@
       "sizeLabel": "Frontier",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1000000,
       "enabled": true,
       "supportsVision": false,
@@ -507,7 +507,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3-5M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -534,7 +534,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~5-10M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -561,7 +561,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~18-45M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -584,11 +584,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "promo (trial)",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": 131072,
       "enabled": false,
       "supportsVision": false,
@@ -611,11 +611,11 @@
       "sizeLabel": "Frontier",
       "limits": {
         "rpm": 10,
-        "rpd": 20,
+        "rpd": 500,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -642,7 +642,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~18-45M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -723,7 +723,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -743,7 +743,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -759,11 +759,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "promo (trial)",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -817,7 +817,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -837,7 +837,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~18-45M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 24000,
       "enabled": true,
       "supportsVision": false,
@@ -864,7 +864,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -893,11 +893,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 15,
-        "rpd": 20,
+        "rpd": 1000,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -913,11 +913,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 30,
-        "rpd": 250,
-        "tpm": 70000,
+        "rpd": 14400,
+        "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -933,11 +933,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 30,
-        "rpd": 1000,
-        "tpm": 8000,
-        "tpd": 200000
+        "rpd": 14400,
+        "tpm": 12000,
+        "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -953,11 +953,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 30,
-        "rpd": 1000,
-        "tpm": 8000,
-        "tpd": 200000
+        "rpd": 14400,
+        "tpm": 12000,
+        "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -977,7 +977,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~18-45M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1005,12 +1005,12 @@
       "speedRank": 4,
       "sizeLabel": "Large",
       "limits": {
-        "rpm": null,
+        "rpm": 10,
         "rpd": null,
         "tpm": null,
-        "tpd": 1000000
+        "tpd": null
       },
-      "monthlyTokenBudget": "~30M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1025,12 +1025,12 @@
       "speedRank": 4,
       "sizeLabel": "Large",
       "limits": {
-        "rpm": 15,
-        "rpd": 1000,
+        "rpm": 10,
+        "rpd": 200,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~30M",
+      "monthlyTokenBudget": "",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -1050,7 +1050,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1073,11 +1073,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1104,7 +1104,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1133,11 +1133,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 10,
-        "rpd": 20,
+        "rpd": 500,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": false,
       "supportsVision": true,
@@ -1152,12 +1152,12 @@
       "speedRank": 4,
       "sizeLabel": "Large",
       "limits": {
-        "rpm": 15,
-        "rpd": 1000,
+        "rpm": 10,
+        "rpd": 200,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~30M",
+      "monthlyTokenBudget": "",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -1177,7 +1177,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1192,12 +1192,12 @@
       "speedRank": 4,
       "sizeLabel": "Large",
       "limits": {
-        "rpm": null,
+        "rpm": 10,
         "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~30M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -1224,7 +1224,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1278,7 +1278,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1305,7 +1305,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1348,11 +1348,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1375,11 +1375,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1000000,
       "enabled": true,
       "supportsVision": false,
@@ -1402,11 +1402,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1429,11 +1429,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1482,11 +1482,11 @@
       "sizeLabel": "Medium",
       "limits": {
         "rpm": 15,
-        "rpd": 20,
+        "rpd": 1000,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": false,
       "supportsVision": true,
@@ -1546,7 +1546,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1566,7 +1566,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~5-10M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1674,7 +1674,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -1696,7 +1696,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -1718,7 +1718,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -1735,9 +1735,9 @@
       "speedRank": 214,
       "sizeLabel": "Flash",
       "limits": {
-        "rpm": 3,
-        "rpd": 15,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -1756,12 +1756,12 @@
       "speedRank": 4,
       "sizeLabel": "Medium",
       "limits": {
-        "rpm": null,
+        "rpm": 10,
         "rpd": null,
         "tpm": null,
-        "tpd": 1000000
+        "tpd": null
       },
-      "monthlyTokenBudget": "~30M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1801,7 +1801,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -1824,11 +1824,11 @@
       "sizeLabel": "Small",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~4M",
+      "monthlyTokenBudget": "",
       "contextWindow": 128000,
       "enabled": true,
       "supportsVision": false,
@@ -1850,12 +1850,12 @@
       "speedRank": 2,
       "sizeLabel": "Medium",
       "limits": {
-        "rpm": 60,
-        "rpd": 1000,
-        "tpm": 6000,
-        "tpd": 500000
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 12000,
+        "tpd": null
       },
-      "monthlyTokenBudget": "~15M",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1875,7 +1875,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2106,7 +2106,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 196608,
       "enabled": true,
       "supportsVision": false,
@@ -2209,11 +2209,11 @@
       "sizeLabel": "Small",
       "limits": {
         "rpm": 30,
-        "rpd": 1000,
-        "tpm": 6000,
-        "tpd": 500000
+        "rpd": 14400,
+        "tpm": 12000,
+        "tpd": null
       },
-      "monthlyTokenBudget": "~15M",
+      "monthlyTokenBudget": "",
       "contextWindow": 4096,
       "enabled": true,
       "supportsVision": false,
@@ -2494,7 +2494,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -2514,7 +2514,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2534,7 +2534,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -2554,7 +2554,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50-100M",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -2574,7 +2574,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2613,7 +2613,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2658,7 +2658,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -2691,7 +2691,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2724,7 +2724,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 128000,
       "enabled": true,
       "supportsVision": false,
@@ -2757,7 +2757,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -2790,7 +2790,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
@@ -2829,7 +2829,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
@@ -4790,7 +4790,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -4817,7 +4817,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -4844,7 +4844,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -4871,7 +4871,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -4898,7 +4898,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 163840,
       "enabled": true,
       "supportsVision": false,
@@ -4925,7 +4925,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 163840,
       "enabled": true,
       "supportsVision": false,
@@ -4952,7 +4952,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -4979,7 +4979,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -5006,7 +5006,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -5033,7 +5033,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 1000192,
       "enabled": true,
       "supportsVision": false,
@@ -5060,7 +5060,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 200000,
       "enabled": true,
       "supportsVision": false,
@@ -5087,7 +5087,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5114,7 +5114,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5141,7 +5141,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5168,7 +5168,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
@@ -5195,7 +5195,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5222,7 +5222,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5249,7 +5249,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5276,7 +5276,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5303,7 +5303,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5330,7 +5330,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5357,7 +5357,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5380,11 +5380,11 @@
       "sizeLabel": "Audio",
       "limits": {
         "rpm": 30,
-        "rpd": 1000,
-        "tpm": 70000,
+        "rpd": 14400,
+        "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -5402,11 +5402,11 @@
       "sizeLabel": "Audio",
       "limits": {
         "rpm": 30,
-        "rpd": 1000,
-        "tpm": 70000,
+        "rpd": 14400,
+        "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -5611,7 +5611,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5639,7 +5639,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~10-20M",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -5663,11 +5663,11 @@
       "sizeLabel": "Frontier",
       "limits": {
         "rpm": 10,
-        "rpd": 20,
+        "rpd": 500,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -5691,11 +5691,11 @@
       "sizeLabel": "Frontier",
       "limits": {
         "rpm": 15,
-        "rpd": 20,
+        "rpd": 1000,
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~3M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -5719,11 +5719,11 @@
       "sizeLabel": "Large",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -5776,10 +5776,10 @@
       "limits": {
         "rpm": 30,
         "rpd": 14400,
-        "tpm": 15000,
+        "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 14.4K rpd",
+      "monthlyTokenBudget": "",
       "contextWindow": 512,
       "enabled": true,
       "supportsVision": false,
@@ -5797,10 +5797,10 @@
       "limits": {
         "rpm": 30,
         "rpd": 14400,
-        "tpm": 15000,
+        "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 14.4K rpd",
+      "monthlyTokenBudget": "",
       "contextWindow": 512,
       "enabled": true,
       "supportsVision": false,
@@ -5821,7 +5821,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5844,9 +5844,9 @@
       "speedRank": 213,
       "sizeLabel": "Flash",
       "limits": {
-        "rpm": 3,
-        "rpd": 15,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -5900,7 +5900,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": true,
@@ -5928,7 +5928,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5956,7 +5956,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -6092,7 +6092,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 2/min per IP",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6126,7 +6126,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "free · 40 RPM",
+      "monthlyTokenBudget": "",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6504,7 +6504,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6532,7 +6532,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -6560,7 +6560,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6588,7 +6588,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -6616,7 +6616,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -6644,7 +6644,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6672,7 +6672,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -6700,7 +6700,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -6728,7 +6728,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6756,7 +6756,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "$0.10/mo credit",
+      "monthlyTokenBudget": "月度小额 credit",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -7943,7 +7943,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~6M",
+      "monthlyTokenBudget": "",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -8368,9 +8368,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8387,9 +8387,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 15,
+        "rpd": 1000,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8406,9 +8406,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 5,
+        "rpd": 50,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8425,9 +8425,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 5,
+        "rpd": 50,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8444,9 +8444,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 5,
+        "rpd": 50,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8463,9 +8463,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 15,
+        "rpd": 1000,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8482,9 +8482,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8501,9 +8501,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8520,9 +8520,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 5,
+        "rpd": 50,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8539,9 +8539,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8558,9 +8558,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8577,9 +8577,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8596,9 +8596,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8615,9 +8615,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8634,9 +8634,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 10,
+        "rpd": 500,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8653,9 +8653,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8672,9 +8672,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8691,9 +8691,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8710,9 +8710,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8729,9 +8729,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
+        "rpm": 10,
         "rpd": 200,
-        "tpm": null,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8748,9 +8748,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 5,
+        "rpd": 50,
+        "tpm": 250000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -8768,11 +8768,11 @@
       "sizeLabel": "Free",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8787,11 +8787,11 @@
       "sizeLabel": "Free",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8806,11 +8806,11 @@
       "sizeLabel": "Free",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8825,11 +8825,11 @@
       "sizeLabel": "Free",
       "limits": {
         "rpm": 20,
-        "rpd": 200,
+        "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~50 请求/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8843,8 +8843,8 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": 2,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
@@ -8862,12 +8862,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -8881,12 +8881,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -8900,12 +8900,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8919,12 +8919,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8938,12 +8938,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -8957,12 +8957,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8976,12 +8976,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8995,12 +8995,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9014,12 +9014,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9033,12 +9033,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9052,12 +9052,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9071,12 +9071,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9090,12 +9090,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9109,12 +9109,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9128,12 +9128,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9147,12 +9147,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9166,12 +9166,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9185,12 +9185,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9204,12 +9204,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9223,12 +9223,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9242,12 +9242,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
+        "rpm": null,
+        "rpd": null,
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "10K neurons/天",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9280,9 +9280,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 12000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -9299,9 +9299,9 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 12000,
         "tpd": null
       },
       "monthlyTokenBudget": "",
@@ -9318,12 +9318,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
-        "tpd": null
+        "rpm": 5,
+        "rpd": null,
+        "tpm": 30000,
+        "tpd": 1000000
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1M tokens/天",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9337,12 +9337,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9356,12 +9356,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9375,12 +9375,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9394,12 +9394,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9413,12 +9413,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9432,12 +9432,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9451,12 +9451,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9470,12 +9470,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9489,12 +9489,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9508,12 +9508,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9527,12 +9527,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9546,12 +9546,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9565,12 +9565,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9584,12 +9584,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9603,12 +9603,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9622,12 +9622,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9641,12 +9641,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9660,12 +9660,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9679,12 +9679,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9698,12 +9698,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9717,12 +9717,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9736,12 +9736,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9755,12 +9755,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9774,12 +9774,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9793,12 +9793,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9812,12 +9812,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9831,12 +9831,12 @@
       "speedRank": 5,
       "sizeLabel": "Free",
       "limits": {
-        "rpm": 20,
-        "rpd": 200,
-        "tpm": null,
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~1B/月",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,

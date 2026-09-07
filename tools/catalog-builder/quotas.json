@@ -1,0 +1,83 @@
+{
+  "updatedAt": "2026-09-07",
+  "usage": "build-catalog 读取本文件作为额度覆盖层：平台级 limits/monthly 应用于该平台全部模型行；models 精确匹配优先；patterns 按 modelId 包含子串匹配（notContains 排除）。有 source 的条目来自官方文档或可靠检索，检索日见 updatedAt；额度随官方调整变化，改动后重跑 build 生效。",
+  "platforms": {
+    "groq": {
+      "source": "https://console.groq.com/docs/rate-limits",
+      "note": "免费 Developer 层按组织级限流；TPM 随模型 6K-30K+，此处取保守中值",
+      "limits": { "rpm": 30, "rpd": 14400, "tpm": 12000, "tpd": null },
+      "monthly": ""
+    },
+    "mistral": {
+      "source": "https://docs.mistral.ai/admin/billing-usage/usage-limits",
+      "note": "Experiment 免费层：1 req/s、500K TPM、约 1B tokens/月；实测连发第 2 发即限流，按保守 RPM 2 配置",
+      "limits": { "rpm": 2, "rpd": null, "tpm": 500000, "tpd": null },
+      "monthly": "~1B/月"
+    },
+    "google": {
+      "source": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "note": "免费层按模型分档；官方目录观察值更保守，此处取文档值",
+      "patterns": [
+        { "contains": "pro", "notContains": ["lite", "image"], "limits": { "rpm": 5, "rpd": 50, "tpm": 250000, "tpd": null } },
+        { "contains": "flash-lite", "limits": { "rpm": 15, "rpd": 1000, "tpm": 250000, "tpd": null } },
+        { "contains": "flash", "limits": { "rpm": 10, "rpd": 500, "tpm": 250000, "tpd": null } }
+      ],
+      "limits": { "rpm": 10, "rpd": 200, "tpm": 250000, "tpd": null },
+      "monthly": ""
+    },
+    "openrouter": {
+      "source": "https://openrouter.ai/docs/api_reference/limits",
+      "note": ":free 模型按账户余额分档：<$10 为 20 RPM / 50 RPD；≥$10 为 20 RPM / 1000 RPD。本账户 $0 → 50 RPD",
+      "limits": { "rpm": 20, "rpd": 50, "tpm": null, "tpd": null },
+      "monthly": ""
+    },
+    "cloudflare": {
+      "source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "note": "免费 10,000 Neurons/天（全模型共享，UTC 0 点重置），超额报 4006；neurons 不与请求数线性对应，限流交由网关 429 冷却处理",
+      "limits": { "rpm": null, "rpd": null, "tpm": null, "tpd": null },
+      "monthly": "10K neurons/天"
+    },
+    "opencode": {
+      "source": "https://opencode.ai/docs/zen/ + 社区实测（50-100/天 或 200/5h，口径不一）",
+      "note": "免费模型每日额度，各来源口径不一，取最保守 50 RPD",
+      "limits": { "rpm": 20, "rpd": 50, "tpm": null, "tpd": null },
+      "monthly": "~50 请求/天"
+    },
+    "siliconflow": {
+      "source": "https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation",
+      "note": "免费模型固定限速（不可提升）：RPM 1000 / TPM 50K；账户级而非 key 级",
+      "limits": { "rpm": 1000, "rpd": null, "tpm": 50000, "tpd": null },
+      "monthly": ""
+    },
+    "cerebras": {
+      "source": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "note": "免费层 1M tokens/天、约 5 RPM / 30K TPM、上下文限 8K；本 key 当前 out_of_credits 待账户侧处理",
+      "limits": { "rpm": 5, "rpd": null, "tpm": 30000, "tpd": 1000000 },
+      "monthly": "~1M tokens/天"
+    },
+    "nvidia": {
+      "source": "项目 ToS 审查（docs/architecture.md，2026-05 复核）",
+      "note": "NIM 免费访问为固定 40 RPM（2025 credit 制已停）",
+      "limits": { "rpm": 40, "rpd": null, "tpm": null, "tpd": null },
+      "monthly": ""
+    },
+    "zhipu": {
+      "source": "零余额实测（2026-09-03）+ bigmodel.cn 文档",
+      "note": "flash 系免费（并发型限制，无公开 RPM/RPD 表）；turbo/plus 系付费",
+      "limits": { "rpm": 10, "rpd": null, "tpm": null, "tpd": null },
+      "monthly": ""
+    },
+    "huggingface": {
+      "source": "HF Inference Providers 文档",
+      "note": "免费层为月度小额 credit（数美分量级），耗尽即 out_of_credits，不绑卡不扣费",
+      "limits": { "rpm": null, "rpd": null, "tpm": null, "tpd": null },
+      "monthly": "月度小额 credit"
+    },
+    "ovh": {
+      "source": "OVH AI Endpoints 官方说明（经项目架构文档复核）",
+      "note": "匿名访问 2 req/min/IP/模型",
+      "limits": { "rpm": 2, "rpd": null, "tpm": null, "tpd": null },
+      "monthly": ""
+    }
+  }
+}

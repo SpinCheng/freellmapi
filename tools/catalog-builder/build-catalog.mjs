@@ -218,6 +218,34 @@ try {
   console.log(`[smoke] 无冒烟报告可对账（${String(e.message).slice(0, 60)}）`);
 }
 
+// ── 5.6 额度规范化：quotas.json（带来源的检索结果）覆盖 limits/monthly ──
+// 优先级：models 精确匹配 > patterns 子串匹配 > 平台级 defaults；未收录平台不动
+try {
+  const quotas = JSON.parse(fs.readFileSync(path.join(HERE, 'quotas.json'), 'utf8'));
+  let normalized = 0;
+  for (const m of base.models) {
+    const q = quotas.platforms?.[m.platform];
+    if (!q) continue;
+    let limits = q.limits ?? null;
+    if (q.models?.[m.modelId]) limits = q.models[m.modelId];
+    else if (q.patterns) {
+      for (const p of q.patterns) {
+        if (!m.modelId.includes(p.contains)) continue;
+        if ((p.notContains ?? []).some((n) => m.modelId.includes(n))) continue;
+        limits = p.limits;
+        break;
+      }
+    }
+    if (limits && typeof limits === 'object') m.limits = { rpm: null, rpd: null, tpm: null, tpd: null, ...limits };
+    if (q.monthly !== undefined) m.monthlyTokenBudget = q.monthly;
+    normalized++;
+  }
+  const covered = Object.keys(quotas.platforms ?? {}).filter((p) => base.models.some((m) => m.platform === p));
+  console.log(`[quota] 额度规范化: ${covered.length} 个平台 / ${normalized} 个模型行（依据 quotas.json ${quotas.updatedAt}）`);
+} catch (e) {
+  console.log(`[quota] 无 quotas.json 或解析失败，跳过额度规范化（${String(e.message).slice(0, 50)}）`);
+}
+
 // ── 6. 版本号与元数据 ─────────────────────────────────────────────────
 // 规范化：models 表的 NOT NULL 列不允许 null（官方用 "~3M" 之类字符串，未知给空串）
 for (const m of base.models) {
