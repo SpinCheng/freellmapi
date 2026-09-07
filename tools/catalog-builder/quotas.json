@@ -4,80 +4,168 @@
   "platforms": {
     "groq": {
       "source": "https://console.groq.com/docs/rate-limits",
-      "note": "免费 Developer 层按组织级限流；TPM 随模型 6K-30K+，此处取保守中值",
-      "limits": { "rpm": 30, "rpd": 14400, "tpm": 12000, "tpd": null },
-      "monthly": ""
+      "note": "免费 Developer 层按组织级限流；TPM 随模型 6K-30K+，此处取保守中值；月额度按 RPD 14.4K × 保守均值折算",
+      "limits": {
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 12000,
+        "tpd": null
+      },
+      "monthly": "~30M"
     },
     "mistral": {
       "source": "https://docs.mistral.ai/admin/billing-usage/usage-limits",
-      "note": "Experiment 免费层：1 req/s、500K TPM、约 1B tokens/月；实测连发第 2 发即限流，按保守 RPM 2 配置",
-      "limits": { "rpm": 2, "rpd": null, "tpm": 500000, "tpd": null },
-      "monthly": "~1B/月"
+      "note": "Experiment 免费层：1 req/s、500K TPM、约 1B tokens/月；实测连发第 2 发即限流，按保守 RPM 2 配置；官方 ~1B/月，取保守区间（parseBudget 读高端）",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
+        "tpd": null
+      },
+      "monthly": "~500-1000M"
     },
     "google": {
       "source": "https://ai.google.dev/gemini-api/docs/rate-limits",
-      "note": "免费层按模型分档；官方目录观察值更保守，此处取文档值",
+      "note": "免费层按模型分档；官方目录观察值更保守，此处取文档值；按 flash RPD 500 × 均值折算；pro 档实际远低",
       "patterns": [
-        { "contains": "pro", "notContains": ["lite", "image"], "limits": { "rpm": 5, "rpd": 50, "tpm": 250000, "tpd": null } },
-        { "contains": "flash-lite", "limits": { "rpm": 15, "rpd": 1000, "tpm": 250000, "tpd": null } },
-        { "contains": "flash", "limits": { "rpm": 10, "rpd": 500, "tpm": 250000, "tpd": null } }
+        {
+          "contains": "pro",
+          "notContains": [
+            "lite",
+            "image"
+          ],
+          "limits": {
+            "rpm": 5,
+            "rpd": 50,
+            "tpm": 250000,
+            "tpd": null
+          }
+        },
+        {
+          "contains": "flash-lite",
+          "limits": {
+            "rpm": 15,
+            "rpd": 1000,
+            "tpm": 250000,
+            "tpd": null
+          }
+        },
+        {
+          "contains": "flash",
+          "limits": {
+            "rpm": 10,
+            "rpd": 500,
+            "tpm": 250000,
+            "tpd": null
+          }
+        }
       ],
-      "limits": { "rpm": 10, "rpd": 200, "tpm": 250000, "tpd": null },
-      "monthly": ""
+      "limits": {
+        "rpm": 10,
+        "rpd": 200,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "monthly": "~10M"
     },
     "openrouter": {
       "source": "https://openrouter.ai/docs/api_reference/limits",
-      "note": ":free 模型按账户余额分档：<$10 为 20 RPM / 50 RPD；≥$10 为 20 RPM / 1000 RPD。本账户 $0 → 50 RPD",
-      "limits": { "rpm": 20, "rpd": 50, "tpm": null, "tpd": null },
-      "monthly": ""
+      "note": ":free 模型按账户余额分档：<$10 为 20 RPM / 50 RPD；≥$10 为 20 RPM / 1000 RPD。本账户 $0 → 50 RPD；50 RPD × ~2K tok/req × 30 天",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthly": "~3M"
     },
     "cloudflare": {
       "source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
-      "note": "免费 10,000 Neurons/天（全模型共享，UTC 0 点重置），超额报 4006；neurons 不与请求数线性对应，限流交由网关 429 冷却处理",
-      "limits": { "rpm": null, "rpd": null, "tpm": null, "tpd": null },
-      "monthly": "10K neurons/天"
+      "note": "免费 10,000 Neurons/天（全模型共享，UTC 0 点重置），超额报 4006；neurons 不与请求数线性对应，限流交由网关 429 冷却处理；10K neurons/天 ≈ ~3-5M tok/月（社区实测 ~27K neurons/Mtok 输入、输出约 7 倍；$0.011/1K neurons）",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthly": "~3-5M"
     },
     "opencode": {
       "source": "https://opencode.ai/docs/zen/ + 社区实测（50-100/天 或 200/5h，口径不一）",
-      "note": "免费模型每日额度，各来源口径不一，取最保守 50 RPD",
-      "limits": { "rpm": 20, "rpd": 50, "tpm": null, "tpd": null },
-      "monthly": "~50 请求/天"
+      "note": "免费模型每日额度，各来源口径不一，取最保守 50 RPD；~50 请求/天 × ~1K tok/req",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthly": "~1-2M"
     },
     "siliconflow": {
       "source": "https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation",
-      "note": "免费模型固定限速（不可提升）：RPM 1000 / TPM 50K；账户级而非 key 级",
-      "limits": { "rpm": 1000, "rpd": null, "tpm": 50000, "tpd": null },
-      "monthly": ""
+      "note": "免费模型固定限速（不可提升）：RPM 1000 / TPM 50K；账户级而非 key 级；无月上限，按 TPM 50K 持续折算的保守值",
+      "limits": {
+        "rpm": 1000,
+        "rpd": null,
+        "tpm": 50000,
+        "tpd": null
+      },
+      "monthly": "~30M"
     },
     "cerebras": {
       "source": "https://inference-docs.cerebras.ai/support/rate-limits",
-      "note": "免费层 1M tokens/天、约 5 RPM / 30K TPM、上下文限 8K；本 key 当前 out_of_credits 待账户侧处理",
-      "limits": { "rpm": 5, "rpd": null, "tpm": 30000, "tpd": 1000000 },
-      "monthly": "~1M tokens/天"
+      "note": "免费层 1M tokens/天、约 5 RPM / 30K TPM、上下文限 8K；本 key 当前 out_of_credits 待账户侧处理；官方 1M tokens/天 × 30",
+      "limits": {
+        "rpm": 5,
+        "rpd": null,
+        "tpm": 30000,
+        "tpd": 1000000
+      },
+      "monthly": "~30M"
     },
     "nvidia": {
       "source": "项目 ToS 审查（docs/architecture.md，2026-05 复核）",
-      "note": "NIM 免费访问为固定 40 RPM（2025 credit 制已停）",
-      "limits": { "rpm": 40, "rpd": null, "tpm": null, "tpd": null },
-      "monthly": ""
+      "note": "NIM 免费访问为固定 40 RPM（2025 credit 制已停）；40 RPM 无 token 上限，持续折算保守值",
+      "limits": {
+        "rpm": 40,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthly": "~30M"
     },
     "zhipu": {
       "source": "零余额实测（2026-09-03）+ bigmodel.cn 文档",
-      "note": "flash 系免费（并发型限制，无公开 RPM/RPD 表）；turbo/plus 系付费",
-      "limits": { "rpm": 10, "rpd": null, "tpm": null, "tpd": null },
+      "note": "flash 系免费（并发型限制，无公开 RPM/RPD 表）；turbo/plus 系付费；无公开月额度",
+      "limits": {
+        "rpm": 10,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
       "monthly": ""
     },
     "huggingface": {
       "source": "HF Inference Providers 文档",
-      "note": "免费层为月度小额 credit（数美分量级），耗尽即 out_of_credits，不绑卡不扣费",
-      "limits": { "rpm": null, "rpd": null, "tpm": null, "tpd": null },
-      "monthly": "月度小额 credit"
+      "note": "免费层为月度小额 credit（数美分量级），耗尽即 out_of_credits，不绑卡不扣费；$0.10/月 credit 按常见 $0.2-0.9/Mtok 折算",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthly": "~100-500K"
     },
     "ovh": {
       "source": "OVH AI Endpoints 官方说明（经项目架构文档复核）",
-      "note": "匿名访问 2 req/min/IP/模型",
-      "limits": { "rpm": 2, "rpd": null, "tpm": null, "tpd": null },
-      "monthly": ""
+      "note": "匿名访问 2 req/min/IP/模型；2 RPM × ~1K tok/req × 30 天",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthly": "~10M"
     }
   }
 }

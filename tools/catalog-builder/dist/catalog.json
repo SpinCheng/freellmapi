@@ -1,6 +1,6 @@
 {
-  "version": "2026.09.07.8",
-  "generatedAt": "2026-09-07T09:56:45.211Z",
+  "version": "2026.09.07.209780",
+  "generatedAt": "2026-09-07T10:16:49.780Z",
   "tier": "monthly",
   "counts": {
     "models": 411,
@@ -126,7 +126,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -153,7 +153,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -180,7 +180,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -207,7 +207,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -234,7 +234,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -261,7 +261,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -294,7 +294,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -327,7 +327,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -347,7 +347,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -387,7 +387,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -420,7 +420,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -447,7 +447,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -480,7 +480,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 1000000,
       "enabled": true,
       "supportsVision": false,
@@ -507,7 +507,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -534,7 +534,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -561,7 +561,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -588,7 +588,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": 131072,
       "enabled": false,
       "supportsVision": false,
@@ -615,7 +615,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -642,7 +642,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -723,7 +723,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -743,7 +743,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -763,7 +763,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -817,7 +817,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -837,7 +837,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 24000,
       "enabled": true,
       "supportsVision": false,
@@ -864,7 +864,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -897,7 +897,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -917,7 +917,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -937,7 +937,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -957,7 +957,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -977,7 +977,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1030,7 +1030,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -1050,7 +1050,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1077,7 +1077,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1104,7 +1104,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1137,7 +1137,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": false,
       "supportsVision": true,
@@ -1157,7 +1157,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -1177,7 +1177,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1224,7 +1224,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1278,7 +1278,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1305,7 +1305,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1352,7 +1352,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1379,7 +1379,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 1000000,
       "enabled": true,
       "supportsVision": false,
@@ -1406,7 +1406,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1433,7 +1433,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1486,7 +1486,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": false,
       "supportsVision": true,
@@ -1546,7 +1546,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -1566,7 +1566,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1674,7 +1674,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -1696,7 +1696,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -1718,7 +1718,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -1740,7 +1740,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -1801,7 +1801,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -1828,7 +1828,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 128000,
       "enabled": true,
       "supportsVision": false,
@@ -1855,7 +1855,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -1875,7 +1875,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2106,7 +2106,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 196608,
       "enabled": true,
       "supportsVision": false,
@@ -2213,7 +2213,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 4096,
       "enabled": true,
       "supportsVision": false,
@@ -2494,7 +2494,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
@@ -2514,7 +2514,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2534,7 +2534,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -2554,7 +2554,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -2574,7 +2574,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2613,7 +2613,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2658,7 +2658,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -2691,7 +2691,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -2724,7 +2724,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 128000,
       "enabled": true,
       "supportsVision": false,
@@ -2757,7 +2757,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -2790,7 +2790,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
@@ -2829,7 +2829,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
@@ -4790,7 +4790,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -4817,7 +4817,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -4844,7 +4844,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -4871,7 +4871,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -4898,7 +4898,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 163840,
       "enabled": true,
       "supportsVision": false,
@@ -4925,7 +4925,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 163840,
       "enabled": true,
       "supportsVision": false,
@@ -4952,7 +4952,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -4979,7 +4979,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -5006,7 +5006,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -5033,7 +5033,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 1000192,
       "enabled": true,
       "supportsVision": false,
@@ -5060,7 +5060,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 200000,
       "enabled": true,
       "supportsVision": false,
@@ -5087,7 +5087,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5114,7 +5114,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5141,7 +5141,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5168,7 +5168,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
@@ -5195,7 +5195,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5222,7 +5222,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5249,7 +5249,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5276,7 +5276,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5303,7 +5303,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5330,7 +5330,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5357,7 +5357,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5384,7 +5384,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -5406,7 +5406,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -5611,7 +5611,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5639,7 +5639,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": 32768,
       "enabled": true,
       "supportsVision": true,
@@ -5667,7 +5667,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -5695,7 +5695,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -5723,7 +5723,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -5779,7 +5779,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 512,
       "enabled": true,
       "supportsVision": false,
@@ -5800,7 +5800,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 512,
       "enabled": true,
       "supportsVision": false,
@@ -5821,7 +5821,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -5849,7 +5849,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -5900,7 +5900,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": true,
@@ -5928,7 +5928,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": true,
@@ -5956,7 +5956,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -6092,7 +6092,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6126,7 +6126,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6504,7 +6504,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6532,7 +6532,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -6560,7 +6560,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6588,7 +6588,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -6616,7 +6616,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -6644,7 +6644,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6672,7 +6672,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -6700,7 +6700,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -6728,7 +6728,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -6756,7 +6756,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "月度小额 credit",
+      "monthlyTokenBudget": "~100-500K",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -7943,7 +7943,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -8278,7 +8278,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -8297,7 +8297,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 512000,
       "enabled": true,
       "supportsVision": true,
@@ -8316,7 +8316,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -8335,7 +8335,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 1000000,
       "enabled": true,
       "supportsVision": false,
@@ -8354,7 +8354,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": true,
@@ -8373,7 +8373,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8392,7 +8392,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8411,7 +8411,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8430,7 +8430,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8449,7 +8449,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8468,7 +8468,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8487,7 +8487,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -8506,7 +8506,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -8525,7 +8525,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -8544,7 +8544,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
@@ -8563,7 +8563,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -8582,7 +8582,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -8601,7 +8601,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 98304,
       "enabled": true,
       "supportsVision": false,
@@ -8620,7 +8620,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8639,7 +8639,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
@@ -8658,7 +8658,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -8677,7 +8677,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
@@ -8696,7 +8696,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": false,
       "supportsVision": false,
@@ -8715,7 +8715,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": false,
       "supportsVision": false,
@@ -8734,7 +8734,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": false,
       "supportsVision": false,
@@ -8753,7 +8753,7 @@
         "tpm": 250000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
       "enabled": false,
       "supportsVision": false,
@@ -8772,7 +8772,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8791,7 +8791,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8810,7 +8810,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8829,7 +8829,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "~50 请求/天",
+      "monthlyTokenBudget": "~1-2M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8848,7 +8848,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~10M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -8867,7 +8867,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -8886,7 +8886,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -8905,7 +8905,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8924,7 +8924,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8943,7 +8943,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -8962,7 +8962,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -8981,7 +8981,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9000,7 +9000,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9019,7 +9019,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9038,7 +9038,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9057,7 +9057,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9076,7 +9076,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9095,7 +9095,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9114,7 +9114,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9133,7 +9133,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9152,7 +9152,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9171,7 +9171,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9190,7 +9190,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9209,7 +9209,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9228,7 +9228,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9247,7 +9247,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "10K neurons/天",
+      "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": false,
       "supportsVision": false,
@@ -9266,7 +9266,7 @@
         "tpm": null,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~3M",
       "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
@@ -9285,7 +9285,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 4000,
       "enabled": true,
       "supportsVision": false,
@@ -9304,7 +9304,7 @@
         "tpm": 12000,
         "tpd": null
       },
-      "monthlyTokenBudget": "",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": 4000,
       "enabled": true,
       "supportsVision": false,
@@ -9323,7 +9323,7 @@
         "tpm": 30000,
         "tpd": 1000000
       },
-      "monthlyTokenBudget": "~1M tokens/天",
+      "monthlyTokenBudget": "~30M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9342,7 +9342,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9361,7 +9361,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9380,7 +9380,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9399,7 +9399,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9418,7 +9418,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9437,7 +9437,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9456,7 +9456,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9475,7 +9475,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9494,7 +9494,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9513,7 +9513,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9532,7 +9532,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9551,7 +9551,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9570,7 +9570,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9589,7 +9589,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9608,7 +9608,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9627,7 +9627,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9646,7 +9646,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9665,7 +9665,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9684,7 +9684,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9703,7 +9703,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9722,7 +9722,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9741,7 +9741,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9760,7 +9760,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9779,7 +9779,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9798,7 +9798,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9817,7 +9817,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
@@ -9836,7 +9836,7 @@
         "tpm": 500000,
         "tpd": null
       },
-      "monthlyTokenBudget": "~1B/月",
+      "monthlyTokenBudget": "~500-1000M",
       "contextWindow": null,
       "enabled": true,
       "supportsVision": false,
