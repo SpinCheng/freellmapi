@@ -70,14 +70,14 @@
     },
     "openrouter": {
       "source": "https://openrouter.ai/docs/api_reference/limits",
-      "note": ":free 模型按账户余额分档：<$10 为 20 RPM / 50 RPD；≥$10 为 20 RPM / 1000 RPD。本账户 $0 → 50 RPD；50 RPD × ~2K tok/req × 30 天",
+      "note": "约束是请求数（50 RPD，账户级共享池）而非 token；月额度按混合场景 ~3-6K tok/请求折算，纯代理大上下文场景实际可达更高",
       "limits": {
         "rpm": 20,
         "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthly": "~3M"
+      "monthly": "~5-10M"
     },
     "cloudflare": {
       "source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
@@ -92,14 +92,14 @@
     },
     "opencode": {
       "source": "https://opencode.ai/docs/zen/ + 社区实测（50-100/天 或 200/5h，口径不一）",
-      "note": "免费模型每日额度，各来源口径不一，取最保守 50 RPD；~50 请求/天 × ~1K tok/req",
+      "note": "约束是请求数（~50 RPD）而非 token；按混合场景 ~2-3K tok/请求折算；各来源口径 50-200/天不一，取保守",
       "limits": {
         "rpm": 20,
         "rpd": 50,
         "tpm": null,
         "tpd": null
       },
-      "monthly": "~1-2M"
+      "monthly": "~3-5M"
     },
     "siliconflow": {
       "source": "https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation",
