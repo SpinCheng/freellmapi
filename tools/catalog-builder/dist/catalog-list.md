@@ -1,8 +1,9 @@
-# 自维护目录清单 v2026.09.07.6
+# 自维护目录清单 v2026.09.21T49946
 
-- 生成时间: 2026-09-07（新录 groq/cerebras/mistral/aihorde 四把 key）
-- 模型总数: 403（26 平台；较上版 +31：mistral +27、groq +2、cerebras +1）
-- ✅ = 冒烟实测可用 | ~~删除线~~ = 冒烟对账禁用（复活自动解禁）
+- 生成时间: 2026-09-21
+- 模型总数: 395（26 平台；较上版 +5/-4：google/opencode 各+1，groq/HF/ovh 共 -4）
+- 今日关注: opencode 死亡观察中（fetch 仍返回 74 模型、新增 1 个——衰退未确认）
+- ✅ = 冒烟实测可用（标记基于 09-07 冒烟） | ~~删除线~~ = 冒烟对账禁用
 
 ---
 
@@ -128,16 +129,16 @@
 | @cf/deepseek-ai/deepseek-r1-distill-qwen-32b | 128K | 🔧 | 启用 |
 | @cf/deepseek-ai/deepseek-v4-flash-0731 | - | 🔧 | 启用 |
 | @cf/deepseek-ai/deepseek-v4-pro-0813 | - | 🔧 | 启用 |
-| @cf/google/gemma-2b-it-lora | - | 🔧 | 启用 |
+| @cf/google/gemma-2b-it-lora | 8K |  | 启用 |
 | @cf/google/gemma-4-26b-a4b-it | 256K |  | 启用 |
-| @cf/google/gemma-7b-it-lora | - | 🔧 | 启用 |
+| @cf/google/gemma-7b-it-lora | 8K |  | 启用 |
 | ~~@cf/huggingface/distilbert-sst-2-int8~~ | - | 🔧 | **禁用** |
 | @cf/ibm-granite/granite-4.0-h-micro | 128K |  | 启用 |
 | ~~@cf/leonardo/lucid-origin~~ | - | 🔧 | **禁用** |
 | @cf/leonardo/phoenix-1.0 | - | 🔧 | 启用 |
 | @cf/llava-hf/llava-1.5-7b-hf | - | 🔧 | 启用 |
 | ~~@cf/lykon/dreamshaper-8-lcm~~ | - | 🔧 | **禁用** |
-| @cf/meta-llama/llama-2-7b-chat-hf-lora | - | 🔧 | 启用 |
+| @cf/meta-llama/llama-2-7b-chat-hf-lora | 8K |  | 启用 |
 | @cf/meta/llama-3.1-8b-instruct-fp8 | 128K | 🔧 | 启用 |
 | @cf/meta/llama-3.2-11b-vision-instruct | 128K | 👁 | 启用 |
 | @cf/meta/llama-3.2-1b-instruct | 128K |  | 启用 |
@@ -147,7 +148,7 @@
 | @cf/meta/llama-guard-3-8b | 128K |  | 启用 |
 | @cf/meta/m2m100-1.2b | - | 🔧 | 启用 |
 | ~~@cf/microsoft/resnet-50~~ | - | 🔧 | **禁用** |
-| @cf/mistral/mistral-7b-instruct-v0.2-lora | - | 🔧 | 启用 |
+| @cf/mistral/mistral-7b-instruct-v0.2-lora | 32K |  | 启用 |
 | @cf/mistralai/mistral-small-3.1-24b-instruct | 128K | 👁🔧 | 启用 |
 | @cf/moondream/moondream3.1-9B-A2B | 32K | 👁 | 启用 |
 | @cf/nvidia/nemotron-3-120b-a12b | 256K |  | 启用 |
@@ -207,13 +208,13 @@
 | 模型 | 上下文 | 能力 | 状态 |
 |---|---|---|---|
 | ~~antigravity-preview-05-2026~~ | 128K | 🔧 | **禁用** |
+| antigravity-preview-09-2026 | 1024K | 🔧 | 启用 |
 | ~~deep-research-max-preview-04-2026~~ | 128K | 🔧 | **禁用** |
 | ~~deep-research-preview-04-2026~~ | 128K | 🔧 | **禁用** |
 | ~~deep-research-pro-preview-12-2025~~ | 128K | 🔧 | **禁用** |
 | gemini-2.5-computer-use-preview-10-2025 | 128K | 🔧 | 启用 |
 | ~~gemini-2.5-flash~~ | 1024K | 👁🔧 | **禁用** |
 | ~~gemini-2.5-flash-lite~~ | 1024K | 👁🔧 | **禁用** |
-| gemini-2.5-pro | 1024K | 👁🔧 | 启用 |
 | gemini-3-flash-preview | 1024K | 👁🔧 | 启用 |
 | gemini-3-pro-image | 128K | 🔧 | 启用 |
 | gemini-3-pro-image-preview | 128K | 🔧 | 启用 |
@@ -233,12 +234,12 @@
 | gemini-omni-1.1-flash | 128K | 🔧 | 启用 |
 | gemini-omni-flash-preview | 128K | 🔧 | 启用 |
 | gemini-pro-latest | 1024K | 🔧 | 启用 |
-| gemini-robotics-er-2-preview | 128K | 🔧 | 启用 |
+| gemini-robotics-er-2-preview | 128K | 👁 | 启用 |
 | gemma-4-26b-a4b-it | 32K | 👁 | 启用 |
 | gemma-4-31b-it | 32K | 👁 | 启用 |
 | nano-banana-pro-preview | 128K | 🔧 | 启用 |
 
-## huggingface（24）
+## huggingface（22）
 
 | 模型 | 上下文 | 能力 | 状态 |
 |---|---|---|---|
@@ -261,11 +262,32 @@
 | moonshotai/Kimi-K3 | 256K | 🔧 | 启用 |
 | openai/gpt-oss-120b | 128K | 🔧 | 启用 |
 | swiss-ai/Apertus-v1.5-70B | 64K | 🔧 | 启用 |
-| swiss-ai/Apertus-v1.5-8B | 64K | 🔧 | 启用 |
 | tencent/Hy3 | 256K | 🔧 | 启用 |
 | thinkingmachines/Inkling | 1024K | 👁🔧 | 启用 |
-| zai-org/GLM-4.5 | 128K | 🔧 | 启用 |
 | zai-org/GLM-5.2 | 195K | 🔧 | 启用 |
+
+## openrouter（18）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| cohere/north-mini-code:free | 250K | 🔧 | 启用 |
+| dots-studio/dots-3-note-preview:free | 500K | 👁🔧 | 启用 |
+| google/gemma-4-26b-a4b-it:free | 256K |  | 启用 |
+| google/gemma-4-31b-it:free | 256K |  | 启用 |
+| inclusionai/ling-3.0-flash-fin:free | 256K | 🔧 | 启用 |
+| inclusionai/ling-3.0-flash-sante:free | 256K | 🔧 | 启用 |
+| inclusionai/ling-3.0-flash-vl:free | 256K | 👁🔧 | 启用 |
+| liquid/lfm-2.5-2.6b:free | 64K | 🔧 | 启用 |
+| nex-agi/nex-n2.5-mini:free | 256K | 👁🔧 | 启用 |
+| nex-agi/nex-n2.5-pro:free | 256K | 👁🔧 | 启用 |
+| nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free | 256K |  | 启用 |
+| nvidia/nemotron-3-super-120b-a12b:free | 977K | 🔧 | 启用 |
+| ~~nvidia/nemotron-3-ultra-550b-a55b:free~~ | 977K | 🔧 | **禁用** |
+| nvidia/nemotron-3.5-content-safety:free | 125K |  | 启用 |
+| nvidia/nemotron-3.5-lightning:free | 977K | 🔧 | 启用 |
+| poolside/laguna-s-2.1:free | 256K | 🔧 | 启用 |
+| poolside/laguna-xs-2.1:free | 128K |  | 启用 |
+| thinkingmachines/inkling-small:free | 1024K | 👁🔧 | 启用 |
 
 ## aihorde（17）
 
@@ -289,27 +311,7 @@
 | koboldcpp/mradermacher/Cerebras-GPT-111M-instruction-GGUF | 4K |  | 启用 |
 | koboldcpp/mradermacher/pythia-70m-deduped.f16.gguf | 4K |  | 启用 |
 
-## openrouter（15）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| cohere/north-mini-code:free | 250K | 🔧 | 启用 |
-| dots-studio/dots-3-note-preview:free | 500K | 👁🔧 | 启用 |
-| google/gemma-4-26b-a4b-it:free | 256K |  | 启用 |
-| google/gemma-4-31b-it:free | 256K |  | 启用 |
-| inclusionai/ling-3.0-flash-fin:free | 256K | 🔧 | 启用 |
-| inclusionai/ling-3.0-flash-sante:free | 256K | 🔧 | 启用 |
-| liquid/lfm-2.5-2.6b:free | 64K | 🔧 | 启用 |
-| nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free | 256K |  | 启用 |
-| nvidia/nemotron-3-super-120b-a12b:free | 977K | 🔧 | 启用 |
-| ~~nvidia/nemotron-3-ultra-550b-a55b:free~~ | 977K | 🔧 | **禁用** |
-| nvidia/nemotron-3.5-content-safety:free | 125K |  | 启用 |
-| nvidia/nemotron-3.5-lightning:free | 977K | 🔧 | 启用 |
-| poolside/laguna-s-2.1:free | 256K | 🔧 | 启用 |
-| poolside/laguna-xs-2.1:free | 128K |  | 启用 |
-| thinkingmachines/inkling-small:free | 1024K | 👁🔧 | 启用 |
-
-## ovh（15）
+## ovh（13）
 
 | 模型 | 上下文 | 能力 | 状态 |
 |---|---|---|---|
@@ -318,33 +320,14 @@
 | Mistral-Nemo-Instruct-2407 | 125K | 🔧 | 启用 |
 | Mistral-Small-3.2-24B-Instruct-2506 | 128K | 🔧 | 启用 |
 | Qwen2.5-VL-72B-Instruct | 32K | 👁 | 启用 |
-| Qwen3-32B | 128K | 🔧 | 启用 |
 | Qwen3-Coder-30B-A3B-Instruct | 256K | 🔧 | 启用 |
 | Qwen3.5-397B-A17B | 256K | 🔧 | 启用 |
 | Qwen3.5-9B | 256K | 🔧 | 启用 |
 | Qwen3.6-27B | 128K | 🔧 | 启用 |
-| Qwen3.8-27B | 256K | 🔧 | 启用 |
 | Qwen3Guard-Gen-0.6B | 32K |  | 启用 |
 | Qwen3Guard-Gen-8B | 32K |  | 启用 |
 | gpt-oss-120b | 128K | 🔧 | 启用 |
 | gpt-oss-20b | 128K | 🔧 | 启用 |
-
-## nvidia（12）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| google/diffusiongemma-26b-a4b-it | 256K | 👁 | 启用 |
-| ~~google/gemma-4-31b-it~~ | 256K |  | **禁用** |
-| meta/llama-3.2-90b-vision-instruct | 128K | 👁🔧 | 启用 |
-| minimaxai/minimax-m3 | 192K | 🔧 | 启用 |
-| nvidia/ising-calibration-1.5-31b | 128K | 👁 | 启用 |
-| nvidia/nemotron-3-nano-30b-a3b | 256K |  | 启用 |
-| nvidia/nemotron-3-super-120b-a12b | 256K | 🔧 | 启用 |
-| nvidia/nemotron-3-ultra-550b-a55b | 1024K | 🔧 | 启用 |
-| nvidia/nemotron-3.5-content-safety | 128K |  | 启用 |
-| openai/gpt-oss-120b | 128K | 🔧 | 启用 |
-| openai/gpt-oss-20b | 128K | 🔧 | 启用 |
-| poolside/laguna-xs-2.1 | 256K | 🔧 | 启用 |
 
 ## cohere（11）
 
@@ -376,7 +359,7 @@
 | openai/gpt-oss-120b | 128K | 🔧 | 启用 |
 | openai/gpt-oss-20b | 128K | 🔧 | 启用 |
 | openai/gpt-oss-safeguard-20b | 128K | 🔧 | 启用 |
-| qwen/qwen3.6-27b | 128K | 🔧 | 启用 |
+| qwen/qwen3.8-27b | 128K | 🔧 | 启用 |
 
 ## modelscope（11）
 
@@ -394,6 +377,22 @@
 | ZhipuAI/GLM-5.2 | 195K |  | 启用 |
 | deepseek-ai/DeepSeek-V4-Pro | 128K |  | 启用 |
 
+## nvidia（11）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| google/diffusiongemma-26b-a4b-it | 256K | 👁 | 启用 |
+| ~~google/gemma-4-31b-it~~ | 256K |  | **禁用** |
+| meta/llama-3.2-90b-vision-instruct | 128K | 👁🔧 | 启用 |
+| minimaxai/minimax-m3 | 192K | 🔧 | 启用 |
+| nvidia/ising-calibration-1.5-31b | 128K | 👁 | 启用 |
+| nvidia/nemotron-3-super-120b-a12b | 256K | 🔧 | 启用 |
+| nvidia/nemotron-3-ultra-550b-a55b | 1024K | 🔧 | 启用 |
+| nvidia/nemotron-3.5-content-safety | 128K |  | 启用 |
+| openai/gpt-oss-120b | 128K | 🔧 | 启用 |
+| openai/gpt-oss-20b | 128K | 🔧 | 启用 |
+| poolside/laguna-xs-2.1 | 256K | 🔧 | 启用 |
+
 ## kilo（10）
 
 | 模型 | 上下文 | 能力 | 状态 |
@@ -409,12 +408,13 @@
 | poolside/laguna-xs-2.1:free | 256K | 🔧 | 启用 |
 | stepfun/step-3.7-flash:free | 256K |  | 启用 |
 
-## opencode（8）
+## opencode（9）
 
 | 模型 | 上下文 | 能力 | 状态 |
 |---|---|---|---|
 | ~~big-pickle~~ | 128K |  | **禁用** |
 | deepseek-v4-flash-free | 128K | 🔧 | 启用 |
+| jev-1.13-free | - | 🔧 | 启用 |
 | ling-3.0-flash-fin-free | - | 🔧 | 启用 |
 | mimo-v2.5-free | 128K |  | 启用 |
 | muse-spark-1.2-contributor-free | - | 🔧 | 启用 |
@@ -447,27 +447,16 @@
 | qwen3-8b | 128K | 🔧 | 启用 |
 | zai-glm-4.7 | 198K | 🔧 | 启用 |
 
-## ollama（7）
+## ollama（6）
 
 | 模型 | 上下文 | 能力 | 状态 |
 |---|---|---|---|
 | gemma4:31b | 128K |  | 启用 |
 | gpt-oss:120b | 128K | 🔧 | 启用 |
 | gpt-oss:20b | 128K | 🔧 | 启用 |
-| ✅ minimax-m3 | 977K | 🔧 | 启用 |
 | nemotron-3-nano:30b | 256K | 🔧 | 启用 |
 | nemotron-3-super | 256K | 🔧 | 启用 |
 | nemotron-3-ultra | 1024K | 🔧 | 启用 |
-
-## aion（5）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| aion-labs/aion-2.0 | 128K |  | 启用 |
-| aion-labs/aion-2.5 | 128K |  | 启用 |
-| aion-labs/aion-3.0 | 128K |  | 启用 |
-| aion-labs/aion-3.0-mini | 128K |  | 启用 |
-| aion-labs/aion-rp-llama-3.1-8b | 32K |  | 启用 |
 
 ## llm7（5）
 
@@ -479,16 +468,6 @@
 | minimax-m2.7 | 200K | 🔧 | 启用 |
 | mistral-Nemo-Instruct-2407 | 125K | 🔧 | 启用 |
 
-## nara（5）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| agnes-2.0-flash | 256K | 👁🔧 | 启用 |
-| agnes-2.5-flash | 256K | 👁🔧 | 启用 |
-| mistral-large | 246K | 🔧 | 启用 |
-| mistral-medium-3-5 | 250K | 👁🔧 | 启用 |
-| stepfun-3.7-flash | 250K | 👁🔧 | 启用 |
-
 ## sealion（5）
 
 | 模型 | 上下文 | 能力 | 状态 |
@@ -499,6 +478,15 @@
 | aisingapore/Qwen-SEA-LION-v4.5-27B-IT | 32K |  | 启用 |
 | aisingapore/SEA-Guard | 8K |  | 启用 |
 
+## aion（4）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| aion-labs/aion-2.0 | 128K |  | 启用 |
+| aion-labs/aion-3.0 | 128K |  | 启用 |
+| aion-labs/aion-3.0-mini | 128K |  | 启用 |
+| aion-labs/aion-rp-llama-3.1-8b | 32K |  | 启用 |
+
 ## bazaarlink（3）
 
 | 模型 | 上下文 | 能力 | 状态 |
@@ -507,6 +495,14 @@
 | deepseek/deepseek-v4-flash:free | 1024K | 🔧 | 启用 |
 | qwen/qwen3.7-flash:free | 256K | 🔧 | 启用 |
 
+## nara（3）
+
+| 模型 | 上下文 | 能力 | 状态 |
+|---|---|---|---|
+| agnes-2.0-flash | 256K | 👁🔧 | 启用 |
+| agnes-2.5-flash | 256K | 👁🔧 | 启用 |
+| stepfun-3.7-flash | 250K | 👁🔧 | 启用 |
+
 ## reka（3）
 
 | 模型 | 上下文 | 能力 | 状态 |
@@ -514,14 +510,6 @@
 | reka-edge-2603 | 16K | 👁🔧 | 启用 |
 | reka-flash | 64K | 🔧 | 启用 |
 | reka-flash-3 | 64K | 🔧 | 启用 |
-
-## routeway（3）
-
-| 模型 | 上下文 | 能力 | 状态 |
-|---|---|---|---|
-| llama-3.2-3b-instruct:free | 16K | 🔧 | 启用 |
-| llama-3.3-70b-instruct:free | 128K | 🔧 | 启用 |
-| step-3.7-flash:free | 250K | 👁🔧 | 启用 |
 
 ## zhipu（3）
 

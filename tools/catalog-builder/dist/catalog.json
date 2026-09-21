@@ -1,9 +1,9 @@
 {
-  "version": "2026.09.07T39224",
-  "generatedAt": "2026-09-07T10:53:44.173Z",
+  "version": "2026.09.21T49946",
+  "generatedAt": "2026-09-21T13:52:26.096Z",
   "tier": "monthly",
   "counts": {
-    "models": 402,
+    "models": 403,
     "quirks": 34
   },
   "platforms": [
@@ -586,7 +586,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": 131072,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": false,
       "quirks": [
@@ -1135,7 +1135,7 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": true,
       "supportsTools": true,
       "quirks": []
@@ -1457,7 +1457,7 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": true,
       "supportsTools": true,
       "quirks": []
@@ -1810,26 +1810,6 @@
           "severity": "info"
         }
       ]
-    },
-    {
-      "platform": "groq",
-      "modelId": "qwen/qwen3.6-27b",
-      "displayName": "Qwen3.6 27B (Groq)",
-      "intelligenceRank": 17,
-      "speedRank": 2,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 60,
-        "rpd": 1000,
-        "tpm": 6000,
-        "tpd": 500000
-      },
-      "monthlyTokenBudget": "~6-15M",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": []
     },
     {
       "platform": "ovh",
@@ -2434,45 +2414,6 @@
       "supportsVision": false,
       "supportsTools": true,
       "quirks": []
-    },
-    {
-      "platform": "ovh",
-      "modelId": "Qwen3-32B",
-      "displayName": "Qwen3 32B (OVH)",
-      "intelligenceRank": 19,
-      "speedRank": 9,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~10M",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "ovh-anon-trickle",
-          "title": "Anonymous tier is 2 req/min",
-          "body": "OVH AI Endpoints anonymous mode is documented at 2 req/min per IP per model (observed even stricter across models). The 400 req/min authenticated tier requires a Public Cloud project with a payment method, so the catalog ships the keyless path. Treat as a breadth/fallback tier, not a throughput tier.",
-          "severity": "warning"
-        },
-        {
-          "slug": "keyless-anonymous",
-          "title": "No API key required",
-          "body": "Routes anonymously — the catalog ships a keyless sentinel row and calls work with no account or key.",
-          "severity": "info"
-        },
-        {
-          "slug": "ovh-qwen-think-trace",
-          "title": "May emit thinking trace",
-          "body": "OVH Qwen reasoning routes can include <think> blocks or reasoning prose. Strip or suppress the thinking trace when a plain answer is required.",
-          "severity": "warning"
-        }
-      ]
     },
     {
       "platform": "ovh",
@@ -5623,34 +5564,6 @@
       "premiumSince": "2026-07-22T09:39:29.000Z"
     },
     {
-      "platform": "huggingface",
-      "modelId": "zai-org/GLM-4.5",
-      "displayName": "GLM-4.5 (HF)",
-      "intelligenceRank": 7,
-      "speedRank": 7,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~100-500K",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "hf-tiny-credit",
-          "title": "Small $0.10/month routed credit",
-          "body": "HuggingFace Inference Providers grants only ~$0.10/month of routed credit on the free tier (PRO is $2/month). Enough for light experimentation; exhausts quickly. Credits apply only to HF-routed requests.",
-          "severity": "warning"
-        }
-      ],
-      "premiumSince": "2026-07-22T09:39:29.000Z"
-    },
-    {
       "platform": "google",
       "modelId": "gemini-3.1-flash-tts-preview",
       "displayName": "Gemini 3.1 Flash TTS Preview",
@@ -6480,34 +6393,6 @@
       "intelligenceRank": 18,
       "speedRank": 9,
       "sizeLabel": "Large",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~100-500K",
-      "contextWindow": 65536,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "hf-tiny-credit",
-          "title": "Small $0.10/month routed credit",
-          "body": "HuggingFace Inference Providers grants only ~$0.10/month of routed credit on the free tier (PRO is $2/month). Enough for light experimentation; exhausts quickly. Credits apply only to HF-routed requests.",
-          "severity": "warning"
-        }
-      ],
-      "premiumSince": "2026-07-28T14:41:39.000Z"
-    },
-    {
-      "platform": "huggingface",
-      "modelId": "swiss-ai/Apertus-v1.5-8B",
-      "displayName": "Apertus v1.5 8B (HF)",
-      "intelligenceRank": 28,
-      "speedRank": 9,
-      "sizeLabel": "Small",
       "limits": {
         "rpm": null,
         "rpd": null,
@@ -8624,7 +8509,7 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8643,7 +8528,7 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8662,7 +8547,7 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8681,7 +8566,7 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 131072,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9365,7 +9250,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9384,7 +9269,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9403,7 +9288,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9460,7 +9345,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9498,7 +9383,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9517,7 +9402,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9593,7 +9478,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9631,7 +9516,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9650,7 +9535,7 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9669,7 +9554,102 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
-      "enabled": false,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "inclusionai/ling-3.0-flash-vl:free",
+      "displayName": "Ling 3 0 Flash VL",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": true,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "nex-agi/nex-n2.5-mini:free",
+      "displayName": "NEX N2 5 Mini",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": true,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "nex-agi/nex-n2.5-pro:free",
+      "displayName": "NEX N2 5 PRO",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": true,
+      "supportsTools": true
+    },
+    {
+      "platform": "google",
+      "modelId": "antigravity-preview-09-2026",
+      "displayName": "Antigravity Preview 09 2026",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 10,
+        "rpd": 200,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~10M",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "jev-1.13-free",
+      "displayName": "JEV 1 13 Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     }
