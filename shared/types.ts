@@ -202,6 +202,11 @@ export type Platform =
   // aihorde.net key raises queue priority. Has a dedicated AIHordeProvider that
   // normalizes the proxy's OpenAI divergences. See issue #345.
   | 'aihorde'
+  // SenseNova (商汤日日新) Token Plan — OpenAI-compatible public-beta tier; all
+  // /v1/models entries priced $0 (deepseek-v4 family, kimi-k3, glm-5.2,
+  // sensenova-u1/6.8). The dashboard sk- key only works against the
+  // token.sensenova.cn plan domain; api.sensenova.cn native returns 403 code 7.
+  | 'sensenova'
   // User-configured OpenAI-compatible endpoint (llama.cpp, LM Studio, vLLM,
   // Ollama, any base_url). The endpoint URL lives on the api_keys row; see #117.
   | 'custom';

@@ -159,6 +159,17 @@
         "tpd": null
       },
       "monthly": "~10M"
+    },
+    "sensenova": {
+      "source": "token.sensenova.cn /models 实测（2026-09-29）+ 公测公告",
+      "note": "公测期全部 /v1/models 条目定价 $0（9 模型：deepseek-v4 系/kimi-k3/glm-5.2/sensenova-u1 系）；实测 RPM/TPM 限流存在（kimi-k3 首发即 429），保守 RPM 5；公测结束后口径需复核",
+      "limits": {
+        "rpm": 5,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthly": "~3-8M"
     }
   }
 }

@@ -50,6 +50,7 @@ export const PROVIDERS = {
   cohere:      { base: 'https://api.cohere.ai/compatibility/v1', style: 'openai', autoAdd: true },
   cloudflare:  { style: 'cloudflare', autoAdd: true },
   aihorde:     { base: 'https://aihorde.net/api/v2', style: 'aihorde', autoAdd: false, trustListing: false },
+  sensenova:   { base: 'https://token.sensenova.cn/v1', style: 'openai', autoAdd: true },
 };
 
 export const OPENROUTER_PUBLIC_URL = 'https://openrouter.ai/api/v1/models';

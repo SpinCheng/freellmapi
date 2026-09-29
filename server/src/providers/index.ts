@@ -476,6 +476,17 @@ register(new OpenAICompatProvider({
   baseUrl: 'https://api.longcat.chat/openai/v1',
 }));
 
+// SenseNova (商汤日日新) Token Plan — OpenAI-compatible. Free public-beta tier:
+// all /v1/models entries priced $0 (deepseek-v4 family, kimi-k3, glm-5.2,
+// sensenova-u1/6.8). The dashboard-minted sk- key belongs to the
+// token.sensenova.cn plan domain — the native api.sensenova.cn endpoints
+// reject it with 403 code 7.
+register(new OpenAICompatProvider({
+  platform: 'sensenova',
+  name: 'SenseNova',
+  baseUrl: 'https://token.sensenova.cn/v1',
+}));
+
 // iFlytek Spark (讯飞星火). Auth is the console APIPassword as a Bearer token;
 // the Lite model is the free one.
 register(new OpenAICompatProvider({

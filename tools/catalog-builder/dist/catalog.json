@@ -1,9 +1,9 @@
 {
-  "version": "2026.09.21T49946",
-  "generatedAt": "2026-09-21T13:52:26.096Z",
+  "version": "2026.09.29T12001",
+  "generatedAt": "2026-09-29T03:11:18.476Z",
   "tier": "monthly",
   "counts": {
-    "models": 403,
+    "models": 412,
     "quirks": 34
   },
   "platforms": [
@@ -213,33 +213,6 @@
           "slug": "hf-tiny-credit",
           "title": "Small $0.10/month routed credit",
           "body": "HuggingFace Inference Providers grants only ~$0.10/month of routed credit on the free tier (PRO is $2/month). Enough for light experimentation; exhausts quickly. Credits apply only to HF-routed requests.",
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "platform": "opencode",
-      "modelId": "deepseek-v4-flash-free",
-      "displayName": "DeepSeek V4 Flash Free (OpenCode Zen)",
-      "intelligenceRank": 4,
-      "speedRank": 4,
-      "sizeLabel": "Frontier",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "zen-promo-roster",
-          "title": "Limited-time promo, roster rotates",
-          "body": "OpenCode Zen free models are explicitly limited-time promotional access (\"available for a limited time\" per the docs), not a recurring quota. The roster rotates: qwen3.6-plus and minimax-m3 promos already ended. Expect any row here to die without notice; prompts/outputs may be used for model improvement.",
           "severity": "warning"
         }
       ]
@@ -9649,6 +9622,196 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "stealth/space-bunny-alpha",
+      "displayName": "Space Bunny Alpha",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": true,
+      "supportsTools": true
+    },
+    {
+      "platform": "google",
+      "modelId": "antigravity-preview-latest",
+      "displayName": "Antigravity Preview Latest",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 10,
+        "rpd": 200,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~10M",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "mimo-v2.6-flash-free",
+      "displayName": "Mimo V2 6 Flash Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "longcat-2.5-preview-free",
+      "displayName": "Longcat 2 5 Preview Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "space-bunny-free",
+      "displayName": "Space Bunny Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "sensenova",
+      "modelId": "sensenova-u1-fast",
+      "displayName": "Sensenova U1 Fast",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 5,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-8M",
+      "contextWindow": 262144,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "sensenova",
+      "modelId": "sensenova-6.8-flash-lite",
+      "displayName": "Sensenova 6 8 Flash Lite",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 5,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-8M",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "sensenova",
+      "modelId": "sensenova-u1.5-lite",
+      "displayName": "Sensenova U1 5 Lite",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 5,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-8M",
+      "contextWindow": 262144,
+      "enabled": false,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "sensenova",
+      "modelId": "deepseek-flash",
+      "displayName": "Deepseek Flash",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 5,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-8M",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "sensenova",
+      "modelId": "deepseek-v4.1-flash",
+      "displayName": "Deepseek V4 1 Flash",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 5,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-8M",
+      "contextWindow": 1048576,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
