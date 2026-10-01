@@ -66,23 +66,31 @@ function viaSocks(url, headers) {
   });
 }
 
-async function rawGet(url, headers = {}, allowProxyRetry = true) {
+async function rawGet(url, headers = {}, forceSocks = false) {
+  if (forceSocks && SOCKS_PROXY) {
+    const r = await viaSocks(url, headers);
+    return { ...r, via: 'socks' };
+  }
   try {
     const res = await fetch(url, { headers, signal: AbortSignal.timeout(TIMEOUT_MS) });
     return { status: res.status, text: await res.text(), via: 'direct' };
   } catch (e) {
-    if (!allowProxyRetry || !SOCKS_PROXY) throw e;
+    if (!SOCKS_PROXY) throw e;
     const r = await viaSocks(url, headers);
     return { ...r, via: 'socks' };
   }
 }
 
-// 拉取并解析 JSON；401/403 且带了鉴权时，去鉴权重试一次（OVH 等匿名端点）
+// 拉取并解析 JSON；401/403 且带了鉴权时，去鉴权重试一次（OVH 等匿名端点）；
+// 仍 401/403 则走 socks 重试（Cloudflare 风控拦本机直连 IP 时，带鉴权走代理可通，groq/cerebras 实测）
 async function fetchJson(url, headers = {}) {
   let r = await rawGet(url, headers);
   if ((r.status === 401 || r.status === 403) && headers.Authorization) {
     const { Authorization, ...noAuth } = headers;
     r = await rawGet(url, noAuth);
+    if (r.status === 401 || r.status === 403) {
+      r = await rawGet(url, headers, true);
+    }
   }
   if (r.status === 304) return { __304: true };
   if (r.status < 200 || r.status >= 300) throw new Error(`HTTP ${r.status} via ${r.via}`);
