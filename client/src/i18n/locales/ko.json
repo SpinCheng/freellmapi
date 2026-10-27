@@ -610,7 +610,10 @@
       "verified": "{count} verified",
       "testedAt": "verified {date}",
       "stale": "smoke data stale",
-      "noSmoke": "No smoke-test data yet — run check-models.mjs first"
+      "noSmoke": "No smoke-test data yet — run check-models.mjs first",
+      "showAll": "Show all",
+      "allCount": "all {count}",
+      "unverified": "unverified"
     }
   },
   "backups": {

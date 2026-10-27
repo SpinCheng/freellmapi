@@ -47,6 +47,10 @@ function ModelNamesSection() {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [copied, setCopied] = useState<string | null>(null)
+  // Off by default: the curated view is smoke-verified only. Flipping it on
+  // lists every configured model, with unverified rows dimmed and tagged so
+  // the trust boundary stays visible.
+  const [showAll, setShowAll] = useState(false)
 
   // Same query keys as FallbackPage / Playground / ChainManager — react-query
   // dedupes, so expanding here costs nothing when those pages already ran.
@@ -67,10 +71,11 @@ function ModelNamesSection() {
     () => new Set((smoke?.ok ?? []).map(normId)),
     [smoke],
   )
-  const usable = useMemo(
-    () => entries.filter(e => e.enabled && e.keyCount > 0 && verified.has(normId(e.modelId))),
-    [entries, verified],
+  const configured = useMemo(
+    () => entries.filter(e => e.enabled && e.keyCount > 0),
+    [entries],
   )
+  const usable = showAll ? configured : configured.filter(e => verified.has(normId(e.modelId)))
   const customChains = useMemo(
     () => chains.filter(c => c.type === 'custom'),
     [chains],
@@ -83,18 +88,18 @@ function ModelNamesSection() {
   const q = query.trim().toLowerCase()
   const groups = useMemo(() => {
     const match = (s: string) => s.toLowerCase().includes(q)
-    const byPlatform = new Map<string, FallbackEntry[]>()
+    const byPlatform = new Map<string, { e: FallbackEntry; unverified: boolean }[]>()
     for (const e of usable) {
       if (q && !match(e.modelId) && !match(e.displayName) && !match(e.platform)) continue
       const list = byPlatform.get(e.platform) ?? []
-      list.push(e)
+      list.push({ e, unverified: !verified.has(normId(e.modelId)) })
       byPlatform.set(e.platform, list)
     }
     for (const list of byPlatform.values()) {
-      list.sort((a, b) => a.modelId.localeCompare(b.modelId))
+      list.sort((a, b) => a.e.modelId.localeCompare(b.e.modelId))
     }
     return [...byPlatform.entries()].sort((a, b) => a[0].localeCompare(b[0]))
-  }, [usable, q])
+  }, [usable, q, verified])
 
   const chainsShown = q
     ? customChains.filter(c => `auto:${c.name.toLowerCase()}`.includes(q))
@@ -124,7 +129,9 @@ function ModelNamesSection() {
         {open ? <ChevronDown className="size-4 shrink-0 text-muted-foreground" /> : <ChevronRight className="size-4 shrink-0 text-muted-foreground" />}
         <span className="text-sm font-medium">{t('keys.modelNames.title')}</span>
         <span className="rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-          {t('keys.modelNames.verified', { count: usable.length })}
+          {showAll
+            ? t('keys.modelNames.allCount', { count: usable.length })
+            : t('keys.modelNames.verified', { count: usable.length })}
         </span>
         {smoke?.testedAt && (
           <span className={`text-xs ${staleDays !== null && staleDays > 7 ? 'text-amber-500' : 'text-muted-foreground/70'}`}>
@@ -140,12 +147,23 @@ function ModelNamesSection() {
 
       {open && (
         <div className="border-t px-4 py-3">
-          <Input
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            placeholder={t('keys.modelNames.search')}
-            className="mb-3 h-8"
-          />
+          <div className="mb-3 flex items-center gap-3">
+            <Input
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder={t('keys.modelNames.search')}
+              className="h-8"
+            />
+            <label className="flex shrink-0 cursor-pointer select-none items-center gap-1.5 text-xs text-muted-foreground">
+              <input
+                type="checkbox"
+                checked={showAll}
+                onChange={e => setShowAll(e.target.checked)}
+                className="size-3.5 accent-foreground"
+              />
+              {t('keys.modelNames.showAll')}
+            </label>
+          </div>
           {!hasSmoke && (
             <p className="pb-3 text-center text-xs text-amber-500">{t('keys.modelNames.noSmoke')}</p>
           )}
@@ -186,12 +204,13 @@ function ModelNamesSection() {
                   {platform} · {list.length}
                 </p>
                 <div className="space-y-0.5">
-                  {list.map(e => (
+                  {list.map(({ e, unverified }) => (
                     <ModelRow
                       key={e.modelDbId}
                       id={e.modelId}
                       label={e.displayName}
                       hint={fmtContext(e.contextWindow)}
+                      unverified={unverified}
                       copied={copied}
                       onCopy={copy}
                     />
@@ -208,10 +227,13 @@ function ModelNamesSection() {
 
 export { ModelNamesSection }
 
-function ModelRow({ id, label, hint, copied, onCopy }: {
+function ModelRow({ id, label, hint, unverified, copied, onCopy }: {
   id: string
   label: string
   hint?: string
+  // Only set in show-all mode: configured but not smoke-verified — dimmed and
+  // tagged so the trust boundary stays readable at a glance.
+  unverified?: boolean
   copied: string | null
   onCopy: (id: string) => void
 }) {
@@ -222,14 +244,16 @@ function ModelRow({ id, label, hint, copied, onCopy }: {
       type="button"
       onClick={() => onCopy(id)}
       title={id}
-      className="group flex w-full items-center gap-2 rounded px-2 py-1 text-left hover:bg-muted/60"
+      className={`group flex w-full items-center gap-2 rounded px-2 py-1 text-left hover:bg-muted/60${unverified ? ' opacity-60' : ''}`}
     >
       {isCopied
         ? <Check className="size-3.5 shrink-0 text-emerald-500" />
         : <Copy className="size-3.5 shrink-0 text-muted-foreground/40 group-hover:text-muted-foreground" />}
       <code className="shrink-0 text-xs font-medium">{id}</code>
       <span className="truncate text-xs text-muted-foreground">{label}</span>
-      {hint && <span className="ml-auto shrink-0 text-[10px] text-muted-foreground/70">{hint}</span>}
+      {unverified
+        ? <span className="ml-auto shrink-0 text-[10px] text-amber-500/80">{t('keys.modelNames.unverified')}</span>
+        : hint && <span className="ml-auto shrink-0 text-[10px] text-muted-foreground/70">{hint}</span>}
       <span className="w-16 shrink-0 text-right text-[10px] text-emerald-500">
         {isCopied ? t('keys.modelNames.copied') : ''}
       </span>

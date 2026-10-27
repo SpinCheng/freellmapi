@@ -610,7 +610,10 @@
       "verified": "{count} 個已驗證",
       "testedAt": "實測於 {date}",
       "stale": "驗證資料已過期",
-      "noSmoke": "暫無冒煙實測資料（先執行 check-models.mjs）"
+      "noSmoke": "暫無冒煙實測資料（先執行 check-models.mjs）",
+      "showAll": "顯示全部",
+      "allCount": "全部 {count}",
+      "unverified": "未驗證"
     }
   },
   "backups": {

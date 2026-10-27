@@ -610,7 +610,10 @@
       "verified": "{count} 个已验证",
       "testedAt": "实测于 {date}",
       "stale": "验证数据已过期",
-      "noSmoke": "暂无冒烟实测数据（先运行 check-models.mjs）"
+      "noSmoke": "暂无冒烟实测数据（先运行 check-models.mjs）",
+      "showAll": "显示全部",
+      "allCount": "全部 {count}",
+      "unverified": "未验证"
     }
   },
   "backups": {
