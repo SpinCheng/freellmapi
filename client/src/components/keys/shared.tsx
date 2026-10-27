@@ -74,6 +74,10 @@ export const PLATFORMS: { value: Platform; label: string; url: string; keyless?:
   { value: 'volcengine', label: 'Volcengine Ark (free daily, needs cn real-name)', url: 'https://console.volcengine.com/ark' },
   { value: 'longcat', label: 'LongCat (free daily, email signup ok)', url: 'https://longcat.chat/platform' },
   { value: 'xfyun', label: 'iFlytek Spark (free Lite, needs cn real-name)', url: 'https://console.xfyun.cn' },
+  // SenseNova Token Plan keys live in the SenseCore console but only work
+  // against token.sensenova.cn/v1 (the native api.sensenova.cn host 403s
+  // code 7 for these keys) — see server/src/providers OpenAICompat entry.
+  { value: 'sensenova', label: 'SenseNova 商汤日日新 (Token Plan)', url: 'https://console.sensecore.cn' },
 ]
 
 // 'custom' is configured through its own form (base URL + model), not the
