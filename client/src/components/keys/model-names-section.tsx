@@ -51,6 +51,10 @@ function ModelNamesSection() {
   // lists every configured model, with unverified rows dimmed and tagged so
   // the trust boundary stays visible.
   const [showAll, setShowAll] = useState(false)
+  // Minimum context window filter (tokens). 0 = no filter; models with no
+  // recorded context are excluded whenever a threshold is set — an unknown
+  // size must not pass a "≥ N" gate.
+  const [minCtx, setMinCtx] = useState(0)
 
   // Same query keys as FallbackPage / Playground / ChainManager — react-query
   // dedupes, so expanding here costs nothing when those pages already ran.
@@ -91,6 +95,7 @@ function ModelNamesSection() {
     const byPlatform = new Map<string, { e: FallbackEntry; unverified: boolean }[]>()
     for (const e of usable) {
       if (q && !match(e.modelId) && !match(e.displayName) && !match(e.platform)) continue
+      if (minCtx && !(e.contextWindow && e.contextWindow >= minCtx)) continue
       const list = byPlatform.get(e.platform) ?? []
       list.push({ e, unverified: !verified.has(normId(e.modelId)) })
       byPlatform.set(e.platform, list)
@@ -99,7 +104,7 @@ function ModelNamesSection() {
       list.sort((a, b) => a.e.modelId.localeCompare(b.e.modelId))
     }
     return [...byPlatform.entries()].sort((a, b) => a[0].localeCompare(b[0]))
-  }, [usable, q, verified])
+  }, [usable, q, verified, minCtx])
 
   const chainsShown = q
     ? customChains.filter(c => `auto:${c.name.toLowerCase()}`.includes(q))
@@ -154,6 +159,19 @@ function ModelNamesSection() {
               placeholder={t('keys.modelNames.search')}
               className="h-8"
             />
+            <select
+              value={minCtx}
+              onChange={e => setMinCtx(Number(e.target.value))}
+              aria-label={t('keys.modelNames.ctxAny')}
+              className="h-8 shrink-0 rounded-md border border-input bg-background px-2 text-xs text-muted-foreground"
+            >
+              <option value={0}>{t('keys.modelNames.ctxAny')}</option>
+              <option value={1_048_576}>≥ 1M</option>
+              <option value={524_288}>≥ 512K</option>
+              <option value={262_144}>≥ 256K</option>
+              <option value={131_072}>≥ 128K</option>
+              <option value={65_536}>≥ 64K</option>
+            </select>
             <label className="flex shrink-0 cursor-pointer select-none items-center gap-1.5 text-xs text-muted-foreground">
               <input
                 type="checkbox"

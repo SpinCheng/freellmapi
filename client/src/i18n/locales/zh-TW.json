@@ -613,7 +613,8 @@
       "noSmoke": "暫無冒煙實測資料（先執行 check-models.mjs）",
       "showAll": "顯示全部",
       "allCount": "全部 {count}",
-      "unverified": "未驗證"
+      "unverified": "未驗證",
+      "ctxAny": "不限上下文"
     }
   },
   "backups": {

@@ -613,7 +613,8 @@
       "noSmoke": "暂无冒烟实测数据（先运行 check-models.mjs）",
       "showAll": "显示全部",
       "allCount": "全部 {count}",
-      "unverified": "未验证"
+      "unverified": "未验证",
+      "ctxAny": "不限上下文"
     }
   },
   "backups": {
