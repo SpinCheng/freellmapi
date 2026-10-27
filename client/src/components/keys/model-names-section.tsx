@@ -89,7 +89,7 @@ export function ModelNamesSection() {
   const totalShown = groups.reduce((n, [, list]) => n + list.length, 0) + chainsShown.length + axesShown.length
 
   return (
-    <section className="rounded-lg border bg-card">
+    <section className="rounded-3xl border bg-card">
       <button
         type="button"
         onClick={() => setOpen(o => !o)}

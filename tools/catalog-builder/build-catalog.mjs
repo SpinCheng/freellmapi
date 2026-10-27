@@ -126,6 +126,25 @@ for (const [platform, res] of Object.entries(fetched)) {
   if (n) console.log(`[add] ${platform}: 新增 ${n} 个`);
 }
 
+// ── 5.2 上下文补全：已有行 contextWindow 为空、且本轮采集拿到了该字段的 → 回填 ──
+// 只回填空值（永不覆盖已有数值）；仅精确 id 匹配——短名匹配有撞名风险，宁可留空。
+// 动机：mistral 的 max_context_length 一度没进 fetch 映射链，21 行存量空着。
+let enriched = 0;
+const ctxByPlatform = {};
+for (const [platform, res] of Object.entries(fetched)) {
+  if (res.ok && res.models?.length) {
+    ctxByPlatform[platform] = new Map(res.models.map((m) => [m.id, m.contextLength ?? null]));
+  }
+}
+for (const m of base.models) {
+  const live = ctxByPlatform[m.platform]?.get(m.modelId);
+  if (!m.contextWindow && live) {
+    m.contextWindow = live;
+    enriched++;
+  }
+}
+if (enriched) console.log(`[enrich] 回填上下文 ${enriched} 个（精确匹配、只填空值）`);
+
 // ── 5.5 冒烟对账：两轮独立冒烟都判死的模型行 → 禁用；曾由冒烟禁用且本轮复活 → 恢复 ──
 // 保险丝：
 //  a) 必须两轮"不同时间"的独立冒烟都死才禁用——限流/付费/超时/502 都不算死：

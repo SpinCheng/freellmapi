@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.01T22872",
-  "generatedAt": "2026-10-01T06:21:12.219Z",
+  "version": "2026.10.27T32805",
+  "generatedAt": "2026-10-27T09:06:45.613Z",
   "tier": "monthly",
   "counts": {
-    "models": 409,
+    "models": 483,
     "quirks": 34
   },
   "platforms": [
@@ -133,33 +133,6 @@
           "title": "Thinking tokens use output cap",
           "body": "Gemini Flash can spend hidden thinking tokens inside maxOutputTokens. Avoid tiny max_tokens values or set thinkingBudget to 0 when provider support is available.",
           "severity": "info"
-        }
-      ]
-    },
-    {
-      "platform": "huggingface",
-      "modelId": "Qwen/Qwen3-Coder-Next",
-      "displayName": "Qwen3-Coder Next (HF)",
-      "intelligenceRank": 3,
-      "speedRank": 9,
-      "sizeLabel": "Large",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~100-500K",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "hf-tiny-credit",
-          "title": "Small $0.10/month routed credit",
-          "body": "HuggingFace Inference Providers grants only ~$0.10/month of routed credit on the free tier (PRO is $2/month). Enough for light experimentation; exhausts quickly. Credits apply only to HF-routed requests.",
-          "severity": "warning"
         }
       ]
     },
@@ -667,33 +640,6 @@
       "quirks": []
     },
     {
-      "platform": "opencode",
-      "modelId": "mimo-v2.5-free",
-      "displayName": "MiMo-V2.5 Free (OpenCode Zen)",
-      "intelligenceRank": 14,
-      "speedRank": 4,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": 131072,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": false,
-      "quirks": [
-        {
-          "slug": "zen-promo-roster",
-          "title": "Limited-time promo, roster rotates",
-          "body": "OpenCode Zen free models are explicitly limited-time promotional access (\"available for a limited time\" per the docs), not a recurring quota. The roster rotates: qwen3.6-plus and minimax-m3 promos already ended. Expect any row here to die without notice; prompts/outputs may be used for model improvement.",
-          "severity": "warning"
-        }
-      ]
-    },
-    {
       "platform": "llm7",
       "modelId": "codestral-latest",
       "displayName": "Codestral (LLM7)",
@@ -983,39 +929,6 @@
           "slug": "or-free-cap-account-wide",
           "title": "Daily :free cap is account-wide",
           "body": "OpenRouter’s :free daily cap (50/day, or 1000/day once you have ever bought $10 of credits) is shared across ALL :free models on the account, not per model. Per-row rpd values here are therefore optimistic; the router’s cooldown handling absorbs the shared 429s.",
-          "severity": "info"
-        }
-      ]
-    },
-    {
-      "platform": "ovh",
-      "modelId": "Qwen3-Coder-30B-A3B-Instruct",
-      "displayName": "Qwen3-Coder 30B (OVH)",
-      "intelligenceRank": 19,
-      "speedRank": 9,
-      "sizeLabel": "Medium",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~10M",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "ovh-anon-trickle",
-          "title": "Anonymous tier is 2 req/min",
-          "body": "OVH AI Endpoints anonymous mode is documented at 2 req/min per IP per model (observed even stricter across models). The 400 req/min authenticated tier requires a Public Cloud project with a payment method, so the catalog ships the keyless path. Treat as a breadth/fallback tier, not a throughput tier.",
-          "severity": "warning"
-        },
-        {
-          "slug": "keyless-anonymous",
-          "title": "No API key required",
-          "body": "Routes anonymously — the catalog ships a keyless sentinel row and calls work with no account or key.",
           "severity": "info"
         }
       ]
@@ -1610,7 +1523,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~10M",
-      "contextWindow": null,
+      "contextWindow": 8192,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": false,
@@ -2441,39 +2354,6 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 128000,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "ovh-anon-trickle",
-          "title": "Anonymous tier is 2 req/min",
-          "body": "OVH AI Endpoints anonymous mode is documented at 2 req/min per IP per model (observed even stricter across models). The 400 req/min authenticated tier requires a Public Cloud project with a payment method, so the catalog ships the keyless path. Treat as a breadth/fallback tier, not a throughput tier.",
-          "severity": "warning"
-        },
-        {
-          "slug": "keyless-anonymous",
-          "title": "No API key required",
-          "body": "Routes anonymously — the catalog ships a keyless sentinel row and calls work with no account or key.",
-          "severity": "info"
-        }
-      ]
-    },
-    {
-      "platform": "ovh",
-      "modelId": "Mistral-7B-Instruct-v0.3",
-      "displayName": "Mistral 7B Instruct v0.3 (OVH)",
-      "intelligenceRank": 31,
-      "speedRank": 9,
-      "sizeLabel": "Small",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~10M",
-      "contextWindow": 65536,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true,
@@ -4616,33 +4496,6 @@
     },
     {
       "platform": "huggingface",
-      "modelId": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-      "displayName": "Qwen3-Coder 480B (HF)",
-      "intelligenceRank": 3,
-      "speedRank": 7,
-      "sizeLabel": "Frontier",
-      "limits": {
-        "rpm": null,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~100-500K",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true,
-      "quirks": [
-        {
-          "slug": "hf-tiny-credit",
-          "title": "Small $0.10/month routed credit",
-          "body": "HuggingFace Inference Providers grants only ~$0.10/month of routed credit on the free tier (PRO is $2/month). Enough for light experimentation; exhausts quickly. Credits apply only to HF-routed requests.",
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "platform": "huggingface",
       "modelId": "moonshotai/Kimi-K2.7-Code",
       "displayName": "Kimi K2.7 Code (HF)",
       "intelligenceRank": 3,
@@ -5060,7 +4913,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
-      "contextWindow": null,
+      "contextWindow": 448,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": false,
@@ -5082,7 +4935,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~6-15M",
-      "contextWindow": null,
+      "contextWindow": 448,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": false,
@@ -5477,7 +5330,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~10M",
-      "contextWindow": null,
+      "contextWindow": 8192,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": false,
@@ -7950,44 +7803,6 @@
     },
     {
       "platform": "openrouter",
-      "modelId": "inclusionai/ling-3.0-flash-sante:free",
-      "displayName": "Ling 3 0 Flash Sante",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~5-10M",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "openrouter",
-      "modelId": "inclusionai/ling-3.0-flash-fin:free",
-      "displayName": "Ling 3 0 Flash FIN",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~5-10M",
-      "contextWindow": 262144,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "openrouter",
       "modelId": "dots-studio/dots-3-note-preview:free",
       "displayName": "Dots 3 Note Preview",
       "intelligenceRank": 5,
@@ -8457,7 +8272,7 @@
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 4000,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8476,7 +8291,7 @@
       },
       "monthlyTokenBudget": "~6-15M",
       "contextWindow": 4000,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8532,7 +8347,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 256000,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8551,7 +8366,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8570,7 +8385,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8589,7 +8404,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8608,7 +8423,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8627,7 +8442,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8646,7 +8461,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 131072,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8665,7 +8480,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8684,7 +8499,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8703,7 +8518,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8722,7 +8537,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8741,7 +8556,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8760,7 +8575,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8779,7 +8594,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8798,7 +8613,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
+      "contextWindow": 262144,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -8817,8 +8632,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8836,8 +8651,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8855,27 +8670,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "mistral",
-      "modelId": "mistral-ocr-4-0",
-      "displayName": "Mistral OCR 4 0",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 2,
-        "rpd": null,
-        "tpm": 500000,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8893,8 +8689,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8912,8 +8708,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8931,8 +8727,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8950,8 +8746,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8969,8 +8765,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 16384,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -8988,8 +8784,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 32768,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9007,8 +8803,8 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
+      "contextWindow": 32768,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9026,45 +8822,7 @@
         "tpd": null
       },
       "monthlyTokenBudget": "~50-100M",
-      "contextWindow": null,
-      "enabled": false,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "opencode",
-      "modelId": "muse-spark-1.3-contributor-free",
-      "displayName": "Muse Spark 1 3 Contributor Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "opencode",
-      "modelId": "muse-spark-1.2-contributor-free",
-      "displayName": "Muse Spark 1 2 Contributor Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
+      "contextWindow": 32768,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true
@@ -9507,25 +9265,6 @@
       "supportsTools": true
     },
     {
-      "platform": "openrouter",
-      "modelId": "stealth/space-bunny-alpha",
-      "displayName": "Space Bunny Alpha",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~5-10M",
-      "contextWindow": 1000000,
-      "enabled": true,
-      "supportsVision": true,
-      "supportsTools": true
-    },
-    {
       "platform": "google",
       "modelId": "antigravity-preview-latest",
       "displayName": "Antigravity Preview Latest",
@@ -9540,7 +9279,7 @@
       },
       "monthlyTokenBudget": "~10M",
       "contextWindow": 1048576,
-      "enabled": false,
+      "enabled": true,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9560,63 +9299,6 @@
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
       "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "opencode",
-      "modelId": "longcat-2.5-preview-free",
-      "displayName": "Longcat 2 5 Preview Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "opencode",
-      "modelId": "space-bunny-free",
-      "displayName": "Space Bunny Free",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 20,
-        "rpd": 50,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-5M",
-      "contextWindow": null,
-      "enabled": true,
-      "supportsVision": false,
-      "supportsTools": true
-    },
-    {
-      "platform": "sensenova",
-      "modelId": "sensenova-u1-fast",
-      "displayName": "Sensenova U1 Fast",
-      "intelligenceRank": 5,
-      "speedRank": 5,
-      "sizeLabel": "Free",
-      "limits": {
-        "rpm": 5,
-        "rpd": null,
-        "tpm": null,
-        "tpd": null
-      },
-      "monthlyTokenBudget": "~3-8M",
-      "contextWindow": 262144,
-      "enabled": false,
       "supportsVision": false,
       "supportsTools": true
     },
@@ -9730,6 +9412,1678 @@
       },
       "monthlyTokenBudget": "~3-5M",
       "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "recursive/flint-v1.0:free",
+      "displayName": "Flint V1 0",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "xingchen-agi/xing4.0-29b-a4b:free",
+      "displayName": "Xing4 0 29B A4B",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "openrouter",
+      "modelId": "nvidia/nemotron-3.5-super-vl:free",
+      "displayName": "Nemotron 3 5 Super VL",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~5-10M",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": true,
+      "supportsTools": true
+    },
+    {
+      "platform": "google",
+      "modelId": "gemini-nano-banana-2.1",
+      "displayName": "Gemini Nano Banana 2 1",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 10,
+        "rpd": 200,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~10M",
+      "contextWindow": 65536,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "google",
+      "modelId": "gemini-4-argon",
+      "displayName": "Gemini 4 Argon",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 10,
+        "rpd": 200,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~10M",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-transcribe-3",
+      "displayName": "Voxtral Mini Transcribe 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~50-100M",
+      "contextWindow": 65536,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-transcribe-3-0",
+      "displayName": "Voxtral Mini Transcribe 3 0",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~50-100M",
+      "contextWindow": 65536,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-transcribe-realtime-3",
+      "displayName": "Voxtral Mini Transcribe Realtime 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~50-100M",
+      "contextWindow": 65536,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-mini-transcribe-realtime-3-0",
+      "displayName": "Voxtral Mini Transcribe Realtime 3 0",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~50-100M",
+      "contextWindow": 65536,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-small-transcribe-3",
+      "displayName": "Voxtral Small Transcribe 3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~50-100M",
+      "contextWindow": 65536,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "mistral",
+      "modelId": "voxtral-small-transcribe-3-0",
+      "displayName": "Voxtral Small Transcribe 3 0",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 2,
+        "rpd": null,
+        "tpm": 500000,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~50-100M",
+      "contextWindow": 65536,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "kilo",
+      "modelId": "reflection/beam-free",
+      "displayName": "Beam Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "flint-40b-free",
+      "displayName": "Flint 40B Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "nemotron-3.5-super-vl-free",
+      "displayName": "Nemotron 3 5 Super VL Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "deepseek-v4.1-flash-free",
+      "displayName": "Deepseek V4 1 Flash Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "opencode",
+      "modelId": "glm-5.3-flash-free",
+      "displayName": "GLM 5 3 Flash Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 50,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/cloudflare/clef",
+      "displayName": "Clef",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/cloudflare/clairic",
+      "displayName": "Clairic",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/cloudflare/clef-omni",
+      "displayName": "Clef Omni",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/daily-co/phonellm-mini-alpha-2",
+      "displayName": "Phonellm Mini Alpha 2",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/deepseek-ai/deepseek-v4.1-flash-1017",
+      "displayName": "Deepseek V4 1 Flash 1017",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "cloudflare",
+      "modelId": "@cf/cloudflare/clef-flash",
+      "displayName": "Clef Flash",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": null,
+        "rpd": null,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "~3-5M",
+      "contextWindow": null,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "z-ai/glm-4.5-air-free",
+      "displayName": "GLM 4 5 AIR Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 0,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "nvidia/nemotron-3-ultra-550b-a55b0-free",
+      "displayName": "Nemotron 3 Ultra 550b A55b0 Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "moonshotai/kimi-k3-free",
+      "displayName": "Kimi K3 Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qiniu/conatus-free",
+      "displayName": "Conatus Free",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "meituan/longcat-flash-lite",
+      "displayName": "Longcat Flash Lite",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-vl-30b-a3b-thinking",
+      "displayName": "Qwen3 VL 30B A3B Thinking",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek-r1-0528",
+      "displayName": "Deepseek R1 0528",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-1.5-pro-32k",
+      "displayName": "Doubao 1 5 PRO 32K",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-1.5-thinking-pro",
+      "displayName": "Doubao 1 5 Thinking PRO",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-1.5-vision-pro",
+      "displayName": "Doubao 1 5 Vision PRO",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "glm-4.5",
+      "displayName": "GLM 4 5",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 131072,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "kimi-k2",
+      "displayName": "Kimi K2",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen-turbo",
+      "displayName": "Qwen Turbo",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen-vl-max-2025-01-25",
+      "displayName": "Qwen VL MAX 2025 01 25",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-235b-a22b",
+      "displayName": "Qwen3 235b A22b",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-30b-a3b",
+      "displayName": "Qwen3 30B A3B",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 40000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek-v3",
+      "displayName": "Deepseek V3",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-coder-480b-a35b-instruct",
+      "displayName": "Qwen3 Coder 480b A35b Instruct",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 262000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-seed-1.6",
+      "displayName": "Doubao Seed 1 6",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-seed-1.6-flash",
+      "displayName": "Doubao Seed 1 6 Flash",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-seed-1.6-thinking",
+      "displayName": "Doubao Seed 1 6 Thinking",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek-v3.1",
+      "displayName": "Deepseek V3 1",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v3.1-terminus-thinking",
+      "displayName": "Deepseek V3 1 Terminus Thinking",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v3.1-terminus",
+      "displayName": "Deepseek V3 1 Terminus",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v3.2-exp",
+      "displayName": "Deepseek V3 2 EXP",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v3.2-exp-thinking",
+      "displayName": "Deepseek V3 2 EXP Thinking",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "z-ai/glm-4.6",
+      "displayName": "GLM 4 6",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 200000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "moonshotai/kimi-k2-thinking",
+      "displayName": "Kimi K2 Thinking",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v3.2-251201",
+      "displayName": "Deepseek V3 2 251201",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "z-ai/glm-4.7",
+      "displayName": "GLM 4 7",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 200000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-30b-a3b-thinking-2507",
+      "displayName": "Qwen3 30B A3B Thinking 2507",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 126000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "tencent/hy3-preview",
+      "displayName": "HY3 Preview",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v4-flash-202605",
+      "displayName": "Deepseek V4 Flash 202605",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen/qwen3.7-max",
+      "displayName": "Qwen3 7 MAX",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v4-pro-202606",
+      "displayName": "Deepseek V4 PRO 202606",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen/qwen3.7-plus",
+      "displayName": "Qwen3 7 Plus",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "bytedance/doubao-seed-2-1-pro",
+      "displayName": "Doubao Seed 2 1 PRO",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "bytedance/doubao-seed-2-1-turbo",
+      "displayName": "Doubao Seed 2 1 Turbo",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v4-flash-20260731",
+      "displayName": "Deepseek V4 Flash 20260731",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen/qwen3.8-max",
+      "displayName": "Qwen3 8 MAX",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "deepseek/deepseek-v4-flash-vision-exp",
+      "displayName": "Deepseek V4 Flash Vision EXP",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen/qwen3.8-flash-next",
+      "displayName": "Qwen3 8 Flash Next",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "tencent/hy4-preview",
+      "displayName": "HY4 Preview",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "xiaomi/mimo-v2.6-pro",
+      "displayName": "Mimo V2 6 PRO",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "xiaomi/mimo-v2.6-flash",
+      "displayName": "Mimo V2 6 Flash",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "bytedance/doubao-seed-2-1-lite",
+      "displayName": "Doubao Seed 2 1 Lite",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1024000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "minimax/minimax-m3.1-flash",
+      "displayName": "Minimax M3 1 Flash",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "moonshotai/kimi-k3.1-pro",
+      "displayName": "Kimi K3 1 PRO",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "moonshotai/kimi-k3.1-pro-highspeed",
+      "displayName": "Kimi K3 1 PRO Highspeed",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1048576,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-seed-2.0-code",
+      "displayName": "Doubao Seed 2 0 Code",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-seed-2.0-pro",
+      "displayName": "Doubao Seed 2 0 PRO",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "minimax/minimax-m2.5-highspeed",
+      "displayName": "Minimax M2 5 Highspeed",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 204800,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "MiniMax-M1",
+      "displayName": "MiniMax M1",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-seed-2.0-mini",
+      "displayName": "Doubao Seed 2 0 Mini",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "minimax/minimax-m2",
+      "displayName": "Minimax M2",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 200000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "moonshotai/kimi-k2.5",
+      "displayName": "Kimi K2 5",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "minimax/minimax-m2.5",
+      "displayName": "Minimax M2 5",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 204800,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "doubao-seed-2.0-lite",
+      "displayName": "Doubao Seed 2 0 Lite",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen-max-2025-01-25",
+      "displayName": "Qwen MAX 2025 01 25",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-max-preview",
+      "displayName": "Qwen3 MAX Preview",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 256000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-30b-a3b-instruct-2507",
+      "displayName": "Qwen3 30B A3B Instruct 2507",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 128000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "minimax/minimax-m2.1",
+      "displayName": "Minimax M2 1",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 204800,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "z-ai/glm-5",
+      "displayName": "GLM 5",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 200000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen3-max",
+      "displayName": "Qwen3 MAX",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 262144,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen/qwen3.6-plus",
+      "displayName": "Qwen3 6 Plus",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
+      "enabled": true,
+      "supportsVision": false,
+      "supportsTools": true
+    },
+    {
+      "platform": "qiniu",
+      "modelId": "qwen/qwen3.5-plus",
+      "displayName": "Qwen3 5 Plus",
+      "intelligenceRank": 5,
+      "speedRank": 5,
+      "sizeLabel": "Free",
+      "limits": {
+        "rpm": 20,
+        "rpd": 200,
+        "tpm": null,
+        "tpd": null
+      },
+      "monthlyTokenBudget": "",
+      "contextWindow": 1000000,
       "enabled": true,
       "supportsVision": false,
       "supportsTools": true

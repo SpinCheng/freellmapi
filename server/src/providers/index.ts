@@ -487,6 +487,13 @@ register(new OpenAICompatProvider({
   baseUrl: 'https://token.sensenova.cn/v1',
 }));
 
+// Qiniu AI Token API (七牛云) — OpenAI-compatible, free -free suffix models
+register(new OpenAICompatProvider({
+  platform: 'qiniu',
+  name: 'Qiniu AI Token API',
+  baseUrl: 'https://api.qnaigc.com/v1',
+}));
+
 // iFlytek Spark (讯飞星火). Auth is the console APIPassword as a Bearer token;
 // the Lite model is the free one.
 register(new OpenAICompatProvider({

@@ -207,6 +207,8 @@ export type Platform =
   // sensenova-u1/6.8). The dashboard sk- key only works against the
   // token.sensenova.cn plan domain; api.sensenova.cn native returns 403 code 7.
   | 'sensenova'
+  // Qiniu AI Token API (七牛云) — OpenAI-compatible, free -free suffix models
+  | 'qiniu'
   // User-configured OpenAI-compatible endpoint (llama.cpp, LM Studio, vLLM,
   // Ollama, any base_url). The endpoint URL lives on the api_keys row; see #117.
   | 'custom';

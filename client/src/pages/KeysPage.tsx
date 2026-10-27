@@ -100,9 +100,9 @@ export default function KeysPage() {
         }
       />
 
-      <ModelNamesSection />
-
       <div className="space-y-8">
+        <ModelNamesSection />
+
         {tab === 'apiKey' && (
           <>
             <UnifiedKeySection />

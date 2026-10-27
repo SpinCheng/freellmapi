@@ -106,7 +106,7 @@ async function fetchOpenAIStyle(base, key) {
   const list = j.data ?? j.models ?? [];
   return list.map((m) => ({
     id: m.id ?? m.name,
-    contextLength: m.context_length ?? m.context_window ?? m.max_model_len ?? null,
+    contextLength: m.context_length ?? m.context_window ?? m.max_context_length ?? m.max_model_len ?? null,
   })).filter((m) => m.id);
 }
 
