@@ -408,6 +408,7 @@ export const platformColors: Record<string, string> = {
   volcengine:  '#00b8d9',
   longcat:     '#ffd100',
   xfyun:       '#1f6fd0',
+  sensenova:   '#d97706',
 }
 
 // ── Grouped (unified) rendering ──────────────────────────────────────────────
