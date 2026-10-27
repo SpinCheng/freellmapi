@@ -18,6 +18,17 @@ function fmtContext(n?: number | null): string {
   return n >= 1_048_576 ? `${Math.round(n / 1_048_576)}M` : `${Math.round(n / 1024)}K`
 }
 
+// Built-in auto-routing axes (server GLOBAL_SORT_ALIASES). These are code
+// constants, not profile rows, so /api/profiles never returns them — listed
+// here so `auto:<axis>` stays a copyable first-class model value like the rest.
+const BUILTIN_AXES = [
+  { id: 'auto:smart', note: 'intelligence' },
+  { id: 'auto:fast', note: 'speed' },
+  { id: 'auto:cheap', note: 'price' },
+  { id: 'auto:reliable', note: 'reliability' },
+  { id: 'auto:balanced', note: '' },
+]
+
 export function ModelNamesSection() {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
@@ -63,6 +74,9 @@ export function ModelNamesSection() {
   const chainsShown = q
     ? customChains.filter(c => `auto:${c.name.toLowerCase()}`.includes(q))
     : customChains
+  const axesShown = q
+    ? BUILTIN_AXES.filter(a => a.id.includes(q))
+    : BUILTIN_AXES
 
   const copy = async (id: string) => {
     try {
@@ -72,7 +86,7 @@ export function ModelNamesSection() {
     } catch { /* clipboard denied — selection still works manually */ }
   }
 
-  const totalShown = groups.reduce((n, [, list]) => n + list.length, 0) + chainsShown.length
+  const totalShown = groups.reduce((n, [, list]) => n + list.length, 0) + chainsShown.length + axesShown.length
 
   return (
     <section className="rounded-lg border bg-card">
@@ -104,6 +118,18 @@ export function ModelNamesSection() {
             <p className="py-4 text-center text-sm text-muted-foreground">{t('keys.modelNames.empty')}</p>
           )}
           <div className="max-h-72 space-y-4 overflow-y-auto pr-1">
+            {axesShown.length > 0 && (
+              <div>
+                <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  {t('keys.modelNames.builtin')}
+                </p>
+                <div className="space-y-0.5">
+                  {axesShown.map(a => (
+                    <ModelRow key={a.id} id={a.id} label={a.note} copied={copied} onCopy={copy} />
+                  ))}
+                </div>
+              </div>
+            )}
             {chainsShown.length > 0 && (
               <div>
                 <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">

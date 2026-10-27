@@ -606,7 +606,8 @@
       "search": "Search models…",
       "copied": "Copied",
       "chains": "Named chains",
-      "empty": "No matching models"
+      "empty": "No matching models",
+      "builtin": "Built-in presets"
     }
   },
   "backups": {

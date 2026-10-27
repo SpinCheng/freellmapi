@@ -606,7 +606,8 @@
       "search": "搜索模型…",
       "copied": "已复制",
       "chains": "命名链",
-      "empty": "无匹配模型"
+      "empty": "无匹配模型",
+      "builtin": "内置路由轴"
     }
   },
   "backups": {
