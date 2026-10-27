@@ -29,7 +29,20 @@ const BUILTIN_AXES = [
   { id: 'auto:balanced', note: '' },
 ]
 
-export function ModelNamesSection() {
+// Smoke verdicts (settings.smoke_latest via /api/smoke). A model shows here
+// only when a recent smoke run served it ok — "configured" (enabled + key) is
+// not "reachable", and free pools fail live often enough that the difference
+// matters. Ids are normalized (dots/dashes/underscores collapse) because
+// /v1/models slugs DB model ids (deepseek-v4.1-flash → deepseek-v4-1-flash).
+interface SmokeData {
+  testedAt: string | null
+  okCount: number
+  ok: string[]
+}
+
+const normId = (s: string) => s.toLowerCase().replace(/[.\s_]/g, '-')
+
+function ModelNamesSection() {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -45,15 +58,27 @@ export function ModelNamesSection() {
     queryKey: ['profiles'],
     queryFn: () => apiFetch('/api/profiles'),
   })
+  const { data: smoke } = useQuery<SmokeData>({
+    queryKey: ['smoke'],
+    queryFn: () => apiFetch('/api/smoke'),
+  })
 
+  const verified = useMemo(
+    () => new Set((smoke?.ok ?? []).map(normId)),
+    [smoke],
+  )
   const usable = useMemo(
-    () => entries.filter(e => e.enabled && e.keyCount > 0),
-    [entries],
+    () => entries.filter(e => e.enabled && e.keyCount > 0 && verified.has(normId(e.modelId))),
+    [entries, verified],
   )
   const customChains = useMemo(
     () => chains.filter(c => c.type === 'custom'),
     [chains],
   )
+  const hasSmoke = (smoke?.okCount ?? 0) > 0
+  const staleDays = smoke?.testedAt
+    ? Math.floor((Date.now() - Date.parse(smoke.testedAt)) / 86_400_000)
+    : null
 
   const q = query.trim().toLowerCase()
   const groups = useMemo(() => {
@@ -99,8 +124,15 @@ export function ModelNamesSection() {
         {open ? <ChevronDown className="size-4 shrink-0 text-muted-foreground" /> : <ChevronRight className="size-4 shrink-0 text-muted-foreground" />}
         <span className="text-sm font-medium">{t('keys.modelNames.title')}</span>
         <span className="rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-          {t('keys.modelNames.count', { count: usable.length })}
+          {t('keys.modelNames.verified', { count: usable.length })}
         </span>
+        {smoke?.testedAt && (
+          <span className={`text-xs ${staleDays !== null && staleDays > 7 ? 'text-amber-500' : 'text-muted-foreground/70'}`}>
+            {staleDays !== null && staleDays > 7
+              ? t('keys.modelNames.stale')
+              : t('keys.modelNames.testedAt', { date: new Date(smoke.testedAt).toLocaleDateString() })}
+          </span>
+        )}
         <span className="ml-auto hidden truncate text-xs text-muted-foreground sm:block">
           {t('keys.modelNames.subtitle')}
         </span>
@@ -114,6 +146,9 @@ export function ModelNamesSection() {
             placeholder={t('keys.modelNames.search')}
             className="mb-3 h-8"
           />
+          {!hasSmoke && (
+            <p className="pb-3 text-center text-xs text-amber-500">{t('keys.modelNames.noSmoke')}</p>
+          )}
           {totalShown === 0 && (
             <p className="py-4 text-center text-sm text-muted-foreground">{t('keys.modelNames.empty')}</p>
           )}
@@ -170,6 +205,8 @@ export function ModelNamesSection() {
     </section>
   )
 }
+
+export { ModelNamesSection }
 
 function ModelRow({ id, label, hint, copied, onCopy }: {
   id: string

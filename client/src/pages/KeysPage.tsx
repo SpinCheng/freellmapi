@@ -101,10 +101,9 @@ export default function KeysPage() {
       />
 
       <div className="space-y-8">
-        <ModelNamesSection />
-
         {tab === 'apiKey' && (
           <>
+            <ModelNamesSection />
             <UnifiedKeySection />
             <ClientProfilesSection />
             <ProxySettingsSection />

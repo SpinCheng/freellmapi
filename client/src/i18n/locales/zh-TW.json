@@ -602,12 +602,15 @@
     "modelNames": {
       "title": "可用模型速查",
       "subtitle": "點擊 id 即複製，用於客戶端配置",
-      "count": "{count} 個可用",
       "search": "搜尋模型…",
       "copied": "已複製",
       "chains": "命名鏈",
       "empty": "無符合模型",
-      "builtin": "內建路由軸"
+      "builtin": "內建路由軸",
+      "verified": "{count} 個已驗證",
+      "testedAt": "實測於 {date}",
+      "stale": "驗證資料已過期",
+      "noSmoke": "暫無冒煙實測資料（先執行 check-models.mjs）"
     }
   },
   "backups": {

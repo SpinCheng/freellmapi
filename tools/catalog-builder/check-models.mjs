@@ -131,6 +131,41 @@ const archives = fs.readdirSync(HIST).filter((f) => f.endsWith('.json')).sort();
 while (archives.length > 10) fs.rmSync(path.join(HIST, archives.shift()));
 console.log('\n明细已写入 work/smoke-report.json');
 
+// ── 写入网关 DB settings.smoke_latest：速查卡等前端消费"近期实测可达"名单 ──
+// 合并规则：最近 3 份 ≤14 天报告的并集，任一轮 ok/ok_ctx_only 即验证可达——
+// 单轮冒烟会被平台限流误伤（ok 率被压低），多轮并集才是可达性的稳信号；
+// 确定性死行的禁用仍由 build 的两轮规则负责，两者互补不重复。
+try {
+  const { createRequire } = await import('node:module');
+  const require2 = createRequire(import.meta.url);
+  const { DB_PATH } = await import('./config.mjs');
+  const Database = require2('better-sqlite3');
+  const db = new Database(DB_PATH);
+  const runs = archives.slice(-3)
+    .map((f) => JSON.parse(fs.readFileSync(path.join(HIST, f), 'utf8')))
+    .filter((j) => Date.now() - Date.parse(j.testedAt) < 14 * 24 * 3600 * 1000);
+  const okSet = new Set();
+  const lastStatus = {};
+  for (const j of runs) {
+    for (const r of j.results) {
+      lastStatus[r.model] = r.status;
+      if (/^ok/.test(r.status)) okSet.add(r.model);
+    }
+  }
+  const payload = {
+    testedAt: runs.length ? runs[runs.length - 1].testedAt : null,
+    okCount: okSet.size,
+    ok: [...okSet],
+    lastStatus,
+  };
+  db.prepare("INSERT INTO settings (key, value) VALUES ('smoke_latest', ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value")
+    .run(JSON.stringify(payload));
+  db.close();
+  console.log(`[db] smoke_latest 已写入（验证可达 ${okSet.size} 个，合并最近 ${runs.length} 轮）`);
+} catch (e) {
+  console.warn(`[db] smoke_latest 写入失败（不影响冒烟报告）：${e.message}`);
+}
+
 // 失败清单（速览）
 const bad = results.filter((r) => !String(r.status).startsWith('ok'));
 console.log(`\n非 ok 状态 ${bad.length} 个（前 20）：`);

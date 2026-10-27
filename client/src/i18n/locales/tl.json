@@ -602,12 +602,15 @@
     "modelNames": {
       "title": "Available models",
       "subtitle": "Click an id to copy it for client config",
-      "count": "{count} usable",
       "search": "Search models…",
       "copied": "Copied",
       "chains": "Named chains",
       "empty": "No matching models",
-      "builtin": "Built-in presets"
+      "builtin": "Built-in presets",
+      "verified": "{count} verified",
+      "testedAt": "verified {date}",
+      "stale": "smoke data stale",
+      "noSmoke": "No smoke-test data yet — run check-models.mjs first"
     }
   },
   "backups": {
