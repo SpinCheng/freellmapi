@@ -598,7 +598,16 @@
     "bulkDelete": "Delete all",
     "bulkDeleteConfirm": "Delete {count}?",
     "bulkResult": "Updated {done}; failed {failed}.",
-    "bulkDeleteResult": "Deleted {done}; failed {failed}."
+    "bulkDeleteResult": "Deleted {done}; failed {failed}.",
+    "modelNames": {
+      "title": "Available models",
+      "subtitle": "Click an id to copy it for client config",
+      "count": "{count} usable",
+      "search": "Search models…",
+      "copied": "Copied",
+      "chains": "Named chains",
+      "empty": "No matching models"
+    }
   },
   "backups": {
     "title": "Backups",

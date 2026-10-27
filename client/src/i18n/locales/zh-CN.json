@@ -598,7 +598,16 @@
     "bulkDelete": "批量删除",
     "bulkDeleteConfirm": "删除 {count} 个？",
     "bulkResult": "已更新 {done} 个；失败 {failed} 个。",
-    "bulkDeleteResult": "已删除 {done} 个；失败 {failed} 个。"
+    "bulkDeleteResult": "已删除 {done} 个；失败 {failed} 个。",
+    "modelNames": {
+      "title": "可用模型速查",
+      "subtitle": "点击 id 即复制，用于客户端配置",
+      "count": "{count} 个可用",
+      "search": "搜索模型…",
+      "copied": "已复制",
+      "chains": "命名链",
+      "empty": "无匹配模型"
+    }
   },
   "backups": {
     "title": "备份",

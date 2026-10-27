@@ -598,7 +598,16 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "modelNames": {
+      "title": "Available models",
+      "subtitle": "Click an id to copy it for client config",
+      "count": "{count} usable",
+      "search": "Search models…",
+      "copied": "Copied",
+      "chains": "Named chains",
+      "empty": "No matching models"
+    }
   },
   "backups": {
     "title": "Backups",

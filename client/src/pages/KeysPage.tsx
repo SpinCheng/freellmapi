@@ -19,6 +19,7 @@ import { ProviderChecklistSection } from '@/components/keys/provider-checklist-s
 import { AddKeyDialog } from '@/components/keys/add-key-dialog'
 import { ExportKeysDialog } from '@/components/keys/export-keys-dialog'
 import { AgentCompatibilitySection } from '@/components/keys/agent-compatibility-section'
+import { ModelNamesSection } from '@/components/keys/model-names-section'
 
 type KeysTab = 'providers' | 'quotaSignals' | 'apiKey' | 'anthropic' | 'agents'
 const KEYS_TABS: { id: KeysTab; labelKey: string }[] = [
@@ -98,6 +99,8 @@ export default function KeysPage() {
           </>
         }
       />
+
+      <ModelNamesSection />
 
       <div className="space-y-8">
         {tab === 'apiKey' && (

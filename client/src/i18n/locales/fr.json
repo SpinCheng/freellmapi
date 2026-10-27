@@ -598,7 +598,16 @@
     "testProxy": "Test",
     "testingProxy": "Test en cours…",
     "proxyTestOk": "Le proxy fonctionne — aller-retour en {ms} ms",
-    "proxyTestFail": "Échec du proxy : {reason}"
+    "proxyTestFail": "Échec du proxy : {reason}",
+    "modelNames": {
+      "title": "Available models",
+      "subtitle": "Click an id to copy it for client config",
+      "count": "{count} usable",
+      "search": "Search models…",
+      "copied": "Copied",
+      "chains": "Named chains",
+      "empty": "No matching models"
+    }
   },
   "backups": {
     "title": "Sauvegardes",
